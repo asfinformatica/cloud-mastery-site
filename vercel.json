@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/mentoria", "destination": "/mentoria.html" },
-    { "source": "/workshop", "destination": "/workshop.html" },
-    { "source": "/livro", "destination": "/livro.html" }
+    { "source": "/mentoria", "destination": "/Mentoria001.html" },
+    { "source": "/workshop", "destination": "/Workshop001.html" },
+    { "source": "/livro", "destination": "/Livro001.html" }
   ]
 }
