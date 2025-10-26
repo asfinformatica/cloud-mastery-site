@@ -173,6 +173,13 @@
       background: rgba(96, 165, 250, 0.05);
     }
     
+    /* Disabled button styles */
+    .btn-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    
     /* Sections */
     .section {
       padding: 60px 0;
@@ -204,6 +211,8 @@
       gap: 16px;
       transition: all 0.3s;
       height: 100%;
+      position: relative;
+      overflow: hidden;
     }
     
     .card:hover {
@@ -211,6 +220,22 @@
       border-color: rgba(96, 165, 250, 0.3);
       transform: translateY(-4px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Coming Soon Ribbon */
+    .coming-soon-ribbon {
+      position: absolute;
+      top: 35px;
+      right: -35px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: white;
+      padding: 8px 50px;
+      transform: rotate(45deg);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 10;
     }
     
     .card h3 {
@@ -435,47 +460,7 @@
         <h2>Escolha seu próximo passo</h2>
         
         <div class="cards-grid">
-          <!-- Card 1: Mentoria -->
-          <article class="card">
-            <h3>💼 Mentoria de Carreira</h3>
-            <p>
-              Grupo exclusivo (10 vagas) ou sessões 1:1. Roadmap personalizado, 
-              construção de portfólio, otimização de LinkedIn, simulações de entrevista 
-              e estratégia completa para Cloud Engineer → Management.
-            </p>
-            <ul>
-              <li>Transição e aceleração de carreira</li>
-              <li>Headhunting e posicionamento estratégico</li>
-              <li>Plano de 90 dias com accountability</li>
-              <li>Negociação salarial e progressão</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="/Mentoria001.html">Quero Mentoria</a>
-              <a class="btn btn-secondary" href="/Mentoria001.html#planos">Ver Planos</a>
-            </div>
-          </article>
-
-          <!-- Card 2: Workshop -->
-          <article class="card">
-            <h3>🚀 Workshop GenAI na AWS</h3>
-            <p>
-              Fim de semana intensivo para publicar sua primeira API de GenAI 
-              com Lambda + API Gateway + Bedrock. Do zero ao deploy com 
-              arquitetura de produção.
-            </p>
-            <ul>
-              <li>Arquitetura mínima de produção</li>
-              <li>Observabilidade e controle de custos</li>
-              <li>Deploy guiado com templates</li>
-              <li>Certificado de conclusão</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="/Workshop001.html">Inscrever-se</a>
-              <a class="btn btn-secondary" href="Workshop001.html#programa">Ver Programa</a>
-            </div>
-          </article>
-
-          <!-- Card 3: Livro -->
+          <!-- Card 1: Livro -->
           <article class="card">
             <h3>📚 Livro: Cloud Mastery</h3>
             <p>
@@ -492,6 +477,48 @@
             <div class="card-actions">
               <a class="btn btn-primary" href="/Livro001.html">Comprar Agora</a>
               <a class="btn btn-secondary" href="Livro001.html#sumario">Ver Sumário</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Workshop -->
+          <article class="card">
+            <div class="coming-soon-ribbon">EM BREVE</div>
+            <h3>🚀 Workshop GenAI na AWS</h3>
+            <p>
+              Fim de semana intensivo para publicar sua primeira API de GenAI 
+              com Lambda + API Gateway + Bedrock. Do zero ao deploy com 
+              arquitetura de produção.
+            </p>
+            <ul>
+              <li>Arquitetura mínima de produção</li>
+              <li>Observabilidade e controle de custos</li>
+              <li>Deploy guiado com templates</li>
+              <li>Certificado de conclusão</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary btn-disabled">Inscrever-se</a>
+              <a class="btn btn-secondary btn-disabled">Ver Programa</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Mentoria -->
+          <article class="card">
+            <div class="coming-soon-ribbon">EM BREVE</div>
+            <h3>💼 Mentoria de Carreira</h3>
+            <p>
+              Grupo exclusivo (10 vagas) ou sessões 1:1. Roadmap personalizado, 
+              construção de portfólio, otimização de LinkedIn, simulações de entrevista 
+              e estratégia completa para Cloud Engineer → Management.
+            </p>
+            <ul>
+              <li>Transição e aceleração de carreira</li>
+              <li>Headhunting e posicionamento estratégico</li>
+              <li>Plano de 90 dias com accountability</li>
+              <li>Negociação salarial e progressão</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary btn-disabled">Quero Mentoria</a>
+              <a class="btn btn-secondary btn-disabled">Ver Planos</a>
             </div>
           </article>
         </div>
