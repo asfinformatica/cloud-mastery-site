@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Livro – Cloud Mastery: De Zero a Cloud Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --bg1:#0b1b3b; --bg2:#0e2f72; --bg3:#123a8a;
@@ -22,29 +21,29 @@
     }
     .container{max-width:1100px;margin:0 auto;padding:0 28px}
     a{color:inherit}
-
+    
     /* Header */
     header{position:sticky;top:0;z-index:40;background:rgba(7,14,34,.78);
       backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     nav{height:68px;display:flex;align-items:center;justify-content:space-between}
     .brand{font-weight:800;text-decoration:none}
     .ghost{border:1px solid var(--line);padding:10px 14px;border-radius:12px;text-decoration:none;color:var(--text)}
-
+    
     /* Sticky promo bar */
     .sticky{
       position:sticky; top:68px; z-index:35;
       background:linear-gradient(90deg,rgba(96,165,250,.16),rgba(167,139,250,.16));
       border-bottom:1px solid var(--line);
     }
-    .sticky .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0}
+    .sticky .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0;flex-wrap:wrap}
     .badge{display:inline-flex;gap:8px;align-items:center;
       background:rgba(123,220,255,.15);color:#cfe7ff;border:1px solid rgba(123,220,255,.35);
       padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
     .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;
-      font-weight:800;text-decoration:none;cursor:pointer}
+      font-weight:800;text-decoration:none;cursor:pointer;white-space:nowrap}
     .btn.primary{background:linear-gradient(135deg,var(--primary1),var(--primary2));color:#0a0f2a}
     .btn.ghost{border:1px solid var(--line);color:#e2e8ff;background:transparent}
-
+    
     /* Hero */
     .hero{padding:96px 0 36px}
     .hero h1{font-size:44px;line-height:1.08;margin:12px 0}
@@ -54,44 +53,153 @@
     .grid{display:grid;gap:26px}
     .two{grid-template-columns:1.05fr .95fr}
     .card{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .proof{margin-top:8px;color:#cfe0ff;opacity:.9}
-
+    .proof{margin-top:8px;color:#cfe0ff;opacity:.9;font-size:14px}
+    
     /* Offer stack / bonuses */
     .checks{list-style:none;padding:0;margin:14px 0}
     .checks li{padding-left:28px;position:relative;margin:10px 0;color:#d9e5ff}
     .checks li:before{content:"✓";position:absolute;left:0;top:0;color:#9bd1ff;font-weight:900}
     .bonuses{display:grid;gap:10px;margin-top:10px}
-    .bonus{background:rgba(255,255,255,.06);border:1px dashed var(--line);border-radius:14px;padding:12px}
-
+    .bonus{background:rgba(255,255,255,.06);border:1px dashed var(--line);border-radius:14px;padding:12px;font-size:14px}
+    
     /* Pricing */
     .pricing{display:grid;gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
     .price .value{font-size:26px;margin:6px 0}
     .price s{opacity:.6}
-
-    /* Progress bar (100 cópias) */
+    
+    /* Progress bar */
     .progress{height:10px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
     .progress > span{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#a78bfa)}
-
+    .progress-wrapper{min-width:220px;width:40%}
+    
     /* FAQ */
     .faq{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
     .faq .q{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:16px}
-
+    
+    /* Footer */
     footer{padding:40px 0;color:#b8c7f0;text-align:center;border-top:1px solid var(--line);margin-top:40px}
-
+    
+    /* RESPONSIVE */
     @media(max-width:960px){
+      .container{padding:0 20px}
+      
+      /* Header mobile */
+      nav{height:60px}
+      .brand{font-size:18px}
+      .ghost{padding:8px 12px;font-size:14px}
+      
+      /* Sticky bar mobile */
+      .sticky .wrap{
+        flex-direction:column;
+        gap:12px;
+        padding:12px 0;
+        align-items:stretch;
+      }
+      .sticky .wrap > div{
+        text-align:center;
+        font-size:14px;
+      }
+      .progress-wrapper{
+        width:100%;
+        min-width:100%;
+      }
+      .sticky .btn{
+        width:100%;
+        justify-content:center;
+      }
+      
+      /* Hero mobile */
+      .hero{padding:50px 0 30px}
+      .hero h1{font-size:28px;line-height:1.15}
+      .hero p{font-size:16px}
       .two{grid-template-columns:1fr}
-      .hero h1{font-size:36px}
-      .pricing{grid-template-columns:1fr}
-      .faq{grid-template-columns:1fr}
+      .hero .btn{
+        width:100%;
+        justify-content:center;
+        padding:12px 16px;
+        font-size:15px;
+      }
+      
+      /* Cards mobile */
+      .card{padding:18px;font-size:15px}
+      .card h3{font-size:20px;margin-top:8px}
+      .checks li{font-size:14px;padding-left:24px}
+      .bonuses{gap:8px}
+      .bonus{padding:10px;font-size:13px}
+      
+      /* Pricing mobile */
+      .pricing{
+        grid-template-columns:1fr;
+        gap:16px;
+      }
+      .price{text-align:center}
+      .price .btn{width:100%;justify-content:center}
+      
+      /* Preview section mobile */
+      .grid[style*="1.2fr"]{
+        grid-template-columns:1fr !important;
+      }
+      
+      /* Proof cards mobile */
+      .container > .grid[style*="repeat(3"]{
+        grid-template-columns:1fr !important;
+        gap:16px;
+      }
+      
+      /* FAQ mobile */
+      .faq{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+      .faq .q{
+        padding:14px;
+        font-size:14px;
+      }
+      
+      /* Typography adjustments */
+      h2{font-size:28px;margin-bottom:24px}
+      h3{font-size:20px}
+      
+      /* Footer mobile */
+      footer{
+        padding:30px 0;
+        font-size:14px;
+      }
+    }
+    
+    @media(max-width:480px){
+      .container{padding:0 16px}
+      
+      nav{height:56px}
+      .brand{font-size:16px}
+      
+      .hero{padding:40px 0 24px}
+      .hero h1{font-size:24px}
+      .hero p{font-size:15px;line-height:1.6}
+      
+      .badge{font-size:11px;padding:5px 8px}
+      
+      .card{padding:16px}
+      .card h3{font-size:18px}
+      
+      .checks li{font-size:13px;margin:8px 0}
+      .bonus{font-size:12px;padding:8px}
+      
+      .price .value{font-size:22px}
+      
+      .btn{padding:12px 16px;font-size:14px}
+      
+      h2{font-size:24px;margin-bottom:20px}
+      
+      .proof{font-size:12px}
     }
   </style>
 </head>
 <body>
-
 <header>
   <div class="container">
     <nav>
-      <a href="/" class="brand">Cloud Mastery</a>
+      <a href="/" class="brand">👑 Cloud Mastery</a>
       <a class="ghost" href="mailto:contato@alessandrofalanque.com">Contato</a>
     </nav>
   </div>
@@ -102,7 +210,7 @@
   <div class="container wrap">
     <div class="badge">🚀 Pré-venda 40% OFF</div>
     <div style="font-weight:700">Sobe para R$ 97 em <span id="count">72:00:00</span></div>
-    <div style="min-width:220px;width:40%">
+    <div class="progress-wrapper">
       <div class="progress" title="Meta: 100 cópias">
         <span id="prog" style="width:10%"></span>
       </div>
@@ -124,7 +232,6 @@
         <a class="btn ghost" href="#previa">Ver sumário / Prévia</a>
       </div>
     </div>
-
     <div class="card">
       <h3>O que você leva (offer stack)</h3>
       <ul class="checks">
@@ -151,7 +258,7 @@
     <div class="grid" style="grid-template-columns:1.2fr .8fr">
       <ul class="checks" style="margin-top:0">
         <li>Fundamentos de Arquitetura Cloud (o que muda com AI)</li>
-        <li><b>VPC de Produção</b> — subnets, NAT, rotas, limites e “não faça isso”</li>
+        <li><b>VPC de Produção</b> — subnets, NAT, rotas, limites e "não faça isso"</li>
         <li><b>IAM sem armadilhas</b> — least privilege, boundary, multi-account</li>
         <li><b>Compute certo</b> — EC2 vs Lambda (matriz de decisão)</li>
         <li><b>Dados</b> — S3 e RDS em produção (backup, performance, custo)</li>
@@ -160,7 +267,7 @@
       </ul>
       <div class="card">
         <b>Autor:</b> Head de Data Strategy em Sydney. Ex-AWS (Cape Town), Ex-Google Partner (SA/Manager), Ex-Accenture (Sr. Manager 4,5 anos).  
-        <br/>Formou 60+ profissionais, migrações enterprise multi-cloud, caso Microsoft de automação de deploy.
+        <br/><br/>Formou 60+ profissionais, migrações enterprise multi-cloud, caso Microsoft de automação de deploy.
       </div>
     </div>
   </div>
@@ -178,7 +285,6 @@
         <a class="btn primary" href="https://gum.co/checkout-livro" target="_blank" rel="noopener">Comprar agora</a>
         <div class="micro" style="opacity:.85;margin-top:8px">PDF + atualizações • Entrega imediata</div>
       </div>
-
       <div class="card price">
         <h3>Livro + Workshop</h3>
         <div class="value"><s>R$ 597</s> &nbsp; <b>R$ 497</b></div>
@@ -186,7 +292,6 @@
         <a class="btn primary" href="https://gum.co/checkout-bundle1" target="_blank" rel="noopener">Garantir bundle</a>
         <div class="micro" style="opacity:.85;margin-top:8px">E-book + Workshop GenAI na AWS</div>
       </div>
-
       <div class="card price">
         <h3>Livro + Mentoria (Grupo)</h3>
         <div class="value"><s>R$ 2.997</s> &nbsp; <b>R$ 2.697</b></div>
@@ -212,7 +317,7 @@
   <div class="container">
     <h2>Dúvidas frequentes</h2>
     <div class="faq">
-      <div class="q"><b>É básico?</b><br/>Não. É “básico que roda em produção”. Direto ao que o mercado cobra.</div>
+      <div class="q"><b>É básico?</b><br/>Não. É "básico que roda em produção". Direto ao que o mercado cobra.</div>
       <div class="q"><b>Serve para iniciantes?</b><br/>Sim. Há trilha guiada + projeto final para primeiro portfólio.</div>
       <div class="q"><b>E se uso GCP/Azure?</b><br/>Os padrões valem multi-cloud; os exemplos são com AWS.</div>
       <div class="q"><b>Garantia?</b><br/>7 dias, sem burocracia. Um e-mail e devolvo 100%.</div>
@@ -220,9 +325,14 @@
   </div>
 </section>
 
-<footer>© Cloud Mastery – Livro • <a href="mailto:contato@alessandrofalanque.com" style="color:#9bb4ff">contato@alessandrofalanque.com</a></footer>
+<footer>
+  <div class="container">
+    © 2025 Cloud Mastery – Livro<br>
+    <a href="mailto:contato@alessandrofalanque.com" style="color:#9bb4ff">contato@alessandrofalanque.com</a>
+  </div>
+</footer>
 
-<!-- Contador + Barra de progresso (mock simples) -->
+<!-- Contador + Barra de progresso -->
 <script>
   // ===== COUNTDOWN (72h a partir do primeiro load) =====
   const COUNT_KEY='cm_livro_deadline';
@@ -241,11 +351,10 @@
     requestAnimationFrame(tick);
   }
   tick();
-
-  // ===== PROGRESSO de vendas (simples / manual) =====
-  // Ajuste “sold” conforme suas vendas (você pode setar via console: localStorage.setItem('cm_sold', '23'))
+  
+  // ===== PROGRESSO de vendas =====
   const target = 100;
-  const sold = parseInt(localStorage.getItem('cm_sold')||'0'); // ajuste/integre depois
+  const sold = parseInt(localStorage.getItem('cm_sold')||'0');
   const left = Math.max(target - sold, 0);
   document.getElementById('left').textContent = left;
   document.getElementById('prog').style.width = `${Math.min((sold/target)*100,100)}%`;
