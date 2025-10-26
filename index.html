@@ -44,7 +44,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 22, 40, 0.85);
+      background: rgba(10, 22, 40, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -54,12 +54,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 0;
+      padding: 16px 0;
       gap: 20px;
     }
     
     .brand {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.5px;
       display: flex;
@@ -70,19 +70,36 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
     }
     
     .nav-links a {
       color: var(--text-secondary);
       text-decoration: none;
       font-weight: 600;
-      font-size: 15px;
+      font-size: 14px;
       transition: color 0.2s;
+      white-space: nowrap;
     }
     
     .nav-links a:hover {
       color: var(--text-primary);
+    }
+    
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    
+    .mobile-menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s;
     }
     
     /* Hero */
@@ -365,30 +382,92 @@
     
     /* Responsive */
     @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        padding: 12px 0;
+      }
+      
+      .brand {
+        font-size: 18px;
       }
       
       .nav-links {
-        width: 100%;
+        position: fixed;
+        top: 57px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 22, 40, 0.98);
+        backdrop-filter: blur(12px);
         flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border-bottom: 1px solid var(--card-border);
+      }
+      
+      .nav-links.active {
+        max-height: 300px;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--card-border);
+        font-size: 15px;
+      }
+      
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+      
+      .nav-links .btn {
+        margin: 12px 20px;
+        width: calc(100% - 40px);
+        justify-content: center;
+        border: 2px solid var(--card-border);
       }
       
       .hero {
-        padding: 60px 0 40px;
+        padding: 40px 0 30px;
+      }
+      
+      .badge {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+      
+      h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      
+      .lead {
+        font-size: 16px;
+        margin-bottom: 24px;
       }
       
       .btn-group {
         flex-direction: column;
+        gap: 12px;
       }
       
       .btn {
         width: 100%;
         justify-content: center;
+      }
+      
+      .section {
+        padding: 40px 0;
+      }
+      
+      h2 {
+        font-size: 28px;
+        margin-bottom: 32px;
       }
       
       .cards-grid {
@@ -411,7 +490,12 @@
       }
       
       .card {
-        padding: 24px;
+        padding: 24px 20px;
+      }
+      
+      .coming-soon-ribbon {
+        font-size: 11px;
+        padding: 6px 40px;
       }
     }
   </style>
@@ -421,7 +505,14 @@
     <div class="container">
       <nav class="nav">
         <div class="brand">👑 Cloud Mastery</div>
-        <div class="nav-links">
+        
+        <div class="mobile-menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <div class="nav-links" id="navLinks">
           <a href="#produtos">Produtos</a>
           <a href="#prova">Credibilidade</a>
           <a href="#faq">FAQ</a>
@@ -430,6 +521,29 @@
       </nav>
     </div>
   </header>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+    
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+    
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      const nav = document.querySelector('.nav');
+      const navLinks = document.getElementById('navLinks');
+      if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
 
   <main>
     <section class="hero">
