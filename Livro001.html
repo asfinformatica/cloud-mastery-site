@@ -10,7 +10,7 @@
       --bg1:#0b1b3b; --bg2:#0e2f72; --bg3:#123a8a;
       --text:#e9eefc; --muted:#b8c7f0;
       --primary1:#60a5fa; --primary2:#a78bfa;
-      --glass:rgba(255,255,255,.06); --line:rgba(255,255,255,.10);
+      --glass:#0d1f3d; --line:rgba(255,255,255,.10);
       --radius:18px; --shadow:0 12px 40px rgba(0,0,0,.25)
     }
     *{box-sizing:border-box}
@@ -23,8 +23,8 @@
     a{color:inherit}
     
     /* Header */
-    header{position:sticky;top:0;z-index:40;background:rgba(7,14,34,.78);
-      backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:40;background:#0a1628;
+      border-bottom:1px solid var(--line)}
     nav{height:68px;display:flex;align-items:center;justify-content:space-between}
     .brand{font-weight:800;text-decoration:none}
     .ghost{border:1px solid var(--line);padding:10px 14px;border-radius:12px;text-decoration:none;color:var(--text)}
@@ -32,12 +32,12 @@
     /* Sticky promo bar */
     .sticky{
       position:sticky; top:68px; z-index:35;
-      background:linear-gradient(90deg,rgba(96,165,250,.16),rgba(167,139,250,.16));
+      background:linear-gradient(90deg,#123a8a,#0e2f72);
       border-bottom:1px solid var(--line);
     }
     .sticky .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0;flex-wrap:wrap}
     .badge{display:inline-flex;gap:8px;align-items:center;
-      background:rgba(123,220,255,.15);color:#cfe7ff;border:1px solid rgba(123,220,255,.35);
+      background:#1e4a8a;color:#cfe7ff;border:1px solid rgba(123,220,255,.35);
       padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
     .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;
       font-weight:800;text-decoration:none;cursor:pointer;white-space:nowrap}
@@ -52,7 +52,7 @@
     .hero p{color:var(--muted);font-size:19px;line-height:1.7;max-width:760px}
     .grid{display:grid;gap:26px}
     .two{grid-template-columns:1.05fr .95fr}
-    .card{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card{background:#0d1f3d;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .proof{margin-top:8px;color:#cfe0ff;opacity:.9;font-size:14px}
     
     /* Offer stack / bonuses */
@@ -60,7 +60,7 @@
     .checks li{padding-left:28px;position:relative;margin:10px 0;color:#d9e5ff}
     .checks li:before{content:"✓";position:absolute;left:0;top:0;color:#9bd1ff;font-weight:900}
     .bonuses{display:grid;gap:10px;margin-top:10px}
-    .bonus{background:rgba(255,255,255,.06);border:1px dashed var(--line);border-radius:14px;padding:12px;font-size:14px}
+    .bonus{background:#0a1628;border:1px dashed var(--line);border-radius:14px;padding:12px;font-size:14px}
     
     /* Pricing */
     .pricing{display:grid;gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -68,13 +68,13 @@
     .price s{opacity:.6}
     
     /* Progress bar */
-    .progress{height:10px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
+    .progress{height:10px;background:#0a1628;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
     .progress > span{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#a78bfa)}
     .progress-wrapper{min-width:220px;width:40%}
     
     /* FAQ */
     .faq{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-    .faq .q{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .faq .q{background:#0d1f3d;border:1px solid var(--line);border-radius:14px;padding:16px}
     
     /* Footer */
     footer{padding:40px 0;color:#b8c7f0;text-align:center;border-top:1px solid var(--line);margin-top:40px}
