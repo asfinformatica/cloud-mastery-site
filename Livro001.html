@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Livro – Cloud Mastery: De Zero a Cloud Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#0b1b3b; --bg2:#0e2f72; --bg3:#123a8a;
+      --text:#e9eefc; --muted:#b8c7f0;
+      --primary1:#60a5fa; --primary2:#a78bfa;
+      --glass:rgba(255,255,255,.06); --line:rgba(255,255,255,.10);
+      --radius:18px; --shadow:0 12px 40px rgba(0,0,0,.25)
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg1),var(--bg2) 60%,var(--bg3));
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 28px}
+    a{color:inherit}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:40;background:rgba(7,14,34,.78);
+      backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;text-decoration:none}
+    .ghost{border:1px solid var(--line);padding:10px 14px;border-radius:12px;text-decoration:none;color:var(--text)}
+
+    /* Sticky promo bar */
+    .sticky{
+      position:sticky; top:68px; z-index:35;
+      background:linear-gradient(90deg,rgba(96,165,250,.16),rgba(167,139,250,.16));
+      border-bottom:1px solid var(--line);
+    }
+    .sticky .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;
+      background:rgba(123,220,255,.15);color:#cfe7ff;border:1px solid rgba(123,220,255,.35);
+      padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;
+      font-weight:800;text-decoration:none;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--primary1),var(--primary2));color:#0a0f2a}
+    .btn.ghost{border:1px solid var(--line);color:#e2e8ff;background:transparent}
+
+    /* Hero */
+    .hero{padding:96px 0 36px}
+    .hero h1{font-size:44px;line-height:1.08;margin:12px 0}
+    .grad{background:linear-gradient(135deg,var(--primary1),var(--primary2));
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:19px;line-height:1.7;max-width:760px}
+    .grid{display:grid;gap:26px}
+    .two{grid-template-columns:1.05fr .95fr}
+    .card{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .proof{margin-top:8px;color:#cfe0ff;opacity:.9}
+
+    /* Offer stack / bonuses */
+    .checks{list-style:none;padding:0;margin:14px 0}
+    .checks li{padding-left:28px;position:relative;margin:10px 0;color:#d9e5ff}
+    .checks li:before{content:"✓";position:absolute;left:0;top:0;color:#9bd1ff;font-weight:900}
+    .bonuses{display:grid;gap:10px;margin-top:10px}
+    .bonus{background:rgba(255,255,255,.06);border:1px dashed var(--line);border-radius:14px;padding:12px}
+
+    /* Pricing */
+    .pricing{display:grid;gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .price .value{font-size:26px;margin:6px 0}
+    .price s{opacity:.6}
+
+    /* Progress bar (100 cópias) */
+    .progress{height:10px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#a78bfa)}
+
+    /* FAQ */
+    .faq{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .faq .q{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:16px}
+
+    footer{padding:40px 0;color:#b8c7f0;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+
+    @media(max-width:960px){
+      .two{grid-template-columns:1fr}
+      .hero h1{font-size:36px}
+      .pricing{grid-template-columns:1fr}
+      .faq{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="/" class="brand">Cloud Mastery</a>
+      <a class="ghost" href="mailto:contato@alessandrofalanque.com">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Sticky bar com FOMO -->
+<div class="sticky">
+  <div class="container wrap">
+    <div class="badge">🚀 Pré-venda 40% OFF</div>
+    <div style="font-weight:700">Sobe para R$ 97 em <span id="count">72:00:00</span></div>
+    <div style="min-width:220px;width:40%">
+      <div class="progress" title="Meta: 100 cópias">
+        <span id="prog" style="width:10%"></span>
+      </div>
+      <small style="opacity:.85">Restam <b id="left">100</b> de 100 com bônus de mini-mentoria</small>
+    </div>
+    <a class="btn primary" href="#comprar">Garantir agora</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container grid two">
+    <div>
+      <h1>Livro – <span class="grad">Cloud Mastery: De Zero a Cloud Engineer</span></h1>
+      <p>O guia que faltava para aprender como o mercado <b>real</b> constrói Cloud: VPC, IAM, EC2/Lambda, S3/RDS, observabilidade e custo — com um <b>projeto de portfólio</b> nivel produção. Sem teoria solta.</p>
+      <div class="proof">AWS • Google • Accenture • 60+ profissionais formados • Projetos enterprise</div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn primary" href="#comprar">Quero meu exemplar com 40% OFF</a>
+        <a class="btn ghost" href="#previa">Ver sumário / Prévia</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>O que você leva (offer stack)</h3>
+      <ul class="checks">
+        <li><b>E-book completo (200+ páginas)</b> com frameworks de produção</li>
+        <li><b>Templates</b>: checklists VPC/IAM, runbook de incidentes, playbook de custos</li>
+        <li><b>Projeto de Portfólio</b>: VPC segura + API Lambda + S3 + RDS (repo + diagrama + runbook)</li>
+        <li><b>Banco de entrevistas</b>: perguntas técnicas + respostas modelo</li>
+      </ul>
+      <div class="bonuses">
+        <div class="bonus">🎁 Bônus 1: Pack de <b>diagramas editáveis</b> (draw.io)</div>
+        <div class="bonus">🎁 Bônus 2: <b>Mini-mentoria em grupo</b> (90 min/mês por 3 meses) — 200 primeiras compras</div>
+        <div class="bonus">🎁 Bônus 3: <b>Atualização 2025/1</b> — capítulo GenAI (Bedrock + custos)</div>
+      </div>
+      <div style="margin-top:12px;color:#d9e5ff"><b>Garantia 7 dias</b> — não curtiu, devolvo 100%.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOK INSIDE -->
+<section id="previa" style="padding:14px 0 32px">
+  <div class="container card">
+    <h3 style="margin-top:0">Olhe por dentro (prévia)</h3>
+    <p style="color:var(--muted)">Baixe 12 páginas: capa, sumário, início de VPC e checklist IAM.</p>
+    <div class="grid" style="grid-template-columns:1.2fr .8fr">
+      <ul class="checks" style="margin-top:0">
+        <li>Fundamentos de Arquitetura Cloud (o que muda com AI)</li>
+        <li><b>VPC de Produção</b> — subnets, NAT, rotas, limites e “não faça isso”</li>
+        <li><b>IAM sem armadilhas</b> — least privilege, boundary, multi-account</li>
+        <li><b>Compute certo</b> — EC2 vs Lambda (matriz de decisão)</li>
+        <li><b>Dados</b> — S3 e RDS em produção (backup, performance, custo)</li>
+        <li>Observabilidade (logs, métricas, alarmes que importam)</li>
+        <li>Projeto final – guia para portfólio (repo + diagrama + runbook)</li>
+      </ul>
+      <div class="card">
+        <b>Autor:</b> Head de Data Strategy em Sydney. Ex-AWS (Cape Town), Ex-Google Partner (SA/Manager), Ex-Accenture (Sr. Manager 4,5 anos).  
+        <br/>Formou 60+ profissionais, migrações enterprise multi-cloud, caso Microsoft de automação de deploy.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING / BUNDLES -->
+<section id="comprar" style="padding:36px 0">
+  <div class="container">
+    <h2>Escolha sua opção</h2>
+    <div class="pricing">
+      <div class="card price">
+        <h3>E-book</h3>
+        <div class="value"><s>R$ 97</s> &nbsp; <b>R$ 69,90</b></div>
+        <small>Pré-venda • 100 cópias</small><br/><br/>
+        <a class="btn primary" href="https://gum.co/checkout-livro" target="_blank" rel="noopener">Comprar agora</a>
+        <div class="micro" style="opacity:.85;margin-top:8px">PDF + atualizações • Entrega imediata</div>
+      </div>
+
+      <div class="card price">
+        <h3>Livro + Workshop</h3>
+        <div class="value"><s>R$ 597</s> &nbsp; <b>R$ 497</b></div>
+        <small>Economize R$ 100</small><br/><br/>
+        <a class="btn primary" href="https://gum.co/checkout-bundle1" target="_blank" rel="noopener">Garantir bundle</a>
+        <div class="micro" style="opacity:.85;margin-top:8px">E-book + Workshop GenAI na AWS</div>
+      </div>
+
+      <div class="card price">
+        <h3>Livro + Mentoria (Grupo)</h3>
+        <div class="value"><s>R$ 2.997</s> &nbsp; <b>R$ 2.697</b></div>
+        <small>12x disponíveis</small><br/><br/>
+        <a class="btn primary" href="https://gum.co/checkout-bundle2" target="_blank" rel="noopener">Entrar com desconto</a>
+        <div class="micro" style="opacity:.85;margin-top:8px">Inclui mini-mentoria do lançamento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVAS -->
+<section style="padding:10px 0 32px">
+  <div class="container grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+    <div class="card"><h3>Antes → Depois</h3><p style="color:#d9e5ff">De tutoriais soltos para <b>arquitetura de produção</b> com portfólio e checklists.</p></div>
+    <div class="card"><h3>Entrevistas</h3><p style="color:#d9e5ff">Banco de perguntas/respostas + estudo de caso para defender sua arquitetura.</p></div>
+    <div class="card"><h3>Autoridade</h3><p style="color:#d9e5ff">Use o projeto do livro para postar estudo de caso e aumentar convites no LinkedIn.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:8px 0 36px">
+  <div class="container">
+    <h2>Dúvidas frequentes</h2>
+    <div class="faq">
+      <div class="q"><b>É básico?</b><br/>Não. É “básico que roda em produção”. Direto ao que o mercado cobra.</div>
+      <div class="q"><b>Serve para iniciantes?</b><br/>Sim. Há trilha guiada + projeto final para primeiro portfólio.</div>
+      <div class="q"><b>E se uso GCP/Azure?</b><br/>Os padrões valem multi-cloud; os exemplos são com AWS.</div>
+      <div class="q"><b>Garantia?</b><br/>7 dias, sem burocracia. Um e-mail e devolvo 100%.</div>
+    </div>
+  </div>
+</section>
+
+<footer>© Cloud Mastery – Livro • <a href="mailto:contato@alessandrofalanque.com" style="color:#9bb4ff">contato@alessandrofalanque.com</a></footer>
+
+<!-- Contador + Barra de progresso (mock simples) -->
+<script>
+  // ===== COUNTDOWN (72h a partir do primeiro load) =====
+  const COUNT_KEY='cm_livro_deadline';
+  const saved=localStorage.getItem(COUNT_KEY);
+  const threeDays=72*60*60*1000;
+  const deadline = saved? new Date(parseInt(saved)) : new Date(Date.now()+threeDays);
+  if(!saved) localStorage.setItem(COUNT_KEY, deadline.getTime());
+  const $count = document.getElementById('count');
+  function tick(){
+    const diff = deadline - new Date();
+    if(diff<=0){ $count.textContent='00:00:00'; return; }
+    const h = Math.floor(diff/3_600_000);
+    const m = Math.floor((diff%3_600_000)/60_000);
+    const s = Math.floor((diff%60_000)/1000);
+    $count.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  // ===== PROGRESSO de vendas (simples / manual) =====
+  // Ajuste “sold” conforme suas vendas (você pode setar via console: localStorage.setItem('cm_sold', '23'))
+  const target = 100;
+  const sold = parseInt(localStorage.getItem('cm_sold')||'0'); // ajuste/integre depois
+  const left = Math.max(target - sold, 0);
+  document.getElementById('left').textContent = left;
+  document.getElementById('prog').style.width = `${Math.min((sold/target)*100,100)}%`;
+</script>
+</body>
+</html>

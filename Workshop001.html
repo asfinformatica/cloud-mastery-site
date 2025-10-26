@@ -1,0 +1,92 @@
+<!-- FILE: workshop.html -->
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Workshop Prático – Construa sua 1ª API de GenAI na AWS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg1:#0b1b3b;--bg2:#0e2f72;--bg3:#123a8a;--text:#e9eefc;--muted:#b8c7f0;--primary:#7a8bff;--glass:rgba(255,255,255,.06);--radius:18px;--shadow:0 10px 40px rgba(0,0,0,.25)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui;color:var(--text);background:linear-gradient(180deg,var(--bg1),var(--bg2) 60%,var(--bg3))}
+    header{position:sticky;top:0;z-index:40;background:rgba(7,14,34,.75);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);color:#0a0f2a}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.05);font-weight:700}
+    .hero{padding:96px 0 40px}
+    .hero h1{font-size:44px;margin:10px 0}
+    .hero p{color:var(--muted);font-size:19px;line-height:1.7;max-width:740px}
+    .card{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .grid{display:grid;gap:24px}.two{grid-template-columns:1.2fr .8fr}.three{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:960px){.two,.three{grid-template-columns:1fr}.hero h1{font-size:36px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="/" style="font-weight:800;color:#fff;text-decoration:none">Cloud Mastery</a>
+      <a class="btn btn-primary" href="#checkout">Garantir minha vaga</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Bootcamp de fim de semana • 100% prático</span>
+    <h1>Workshop – Construa sua 1ª API de <span style="background:linear-gradient(90deg,#8ab4ff,#e6a6ff);-webkit-background-clip:text;background-clip:text;color:transparent">GenAI</span> na AWS</h1>
+    <p>Saia do zero ao deploy: API Gateway + Lambda + Bedrock + S3 + IAM + CloudWatch. No final, você entrega uma API funcional de GenAI e sai com um projeto no portfólio.</p>
+    <div style="margin-top:16px"><a class="btn btn-primary" href="#checkout">Quero minha vaga</a></div>
+  </div>
+</section>
+
+<section style="padding:64px 0">
+  <div class="container grid two">
+    <div class="card">
+      <h3>Você vai aprender</h3>
+      <ul style="line-height:1.9">
+        <li>Configurar VPC mínima segura</li>
+        <li>API Gateway + Lambda (Python) integrando com Amazon Bedrock</li>
+        <li>Gerenciar segredos e permissões (IAM)</li>
+        <li>Observabilidade com CloudWatch</li>
+        <li>Deploy automatizado (SAM/CDK – blueprint pronto)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Para quem é</h3>
+      <ul style="line-height:1.9">
+        <li>Início de carreira em Cloud / Dev / Data</li>
+        <li>Quem quer adicionar GenAI no portfólio</li>
+        <li>Profissionais buscando promoção ou transição</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding:64px 0" id="checkout">
+  <div class="container">
+    <div class="grid three">
+      <div class="card">
+        <h3>Lote 1 – 40% OFF</h3>
+        <p style="font-size:36px;font-weight:800">R$ 497</p>
+        <a class="btn btn-primary" href="https://gum.co/checkout-workshop" target="_blank">Garantir vaga</a>
+      </div>
+      <div class="card">
+        <h3>Lote 2</h3>
+        <p style="font-size:36px;font-weight:800">R$ 597</p>
+        <a class="btn btn-primary" href="https://gum.co/checkout-workshop" target="_blank">Garantir vaga</a>
+      </div>
+      <div class="card">
+        <h3>Empresa / Turma fechada</h3>
+        <p style="font-size:22px">Sob consulta</p>
+        <a class="btn btn-primary" href="mailto:contato@alessandrofalanque.com">Solicitar proposta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="padding:40px 0;color:#b8c7f0;text-align:center;border-top:1px solid rgba(255,255,255,.06)">© Cloud Mastery – Workshop GenAI</footer>
+</body>
+</html>

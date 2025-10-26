@@ -1,0 +1,169 @@
+<!-- FILE: mentoria.html -->
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mentoria Cloud Mastery – Carreira em Cloud, Data & AI</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0b1b3b;--bg2:#0e2f72;--bg3:#123a8a;--card: rgba(255,255,255,.04);
+      --text:#e9eefc;--muted:#b8c7f0;--accent:#6ad1ff;--primary:#7a8bff;--ok:#22d3ee;--danger:#ff5a79;
+      --radius:18px;--shadow:0 10px 40px rgba(0,0,0,.25);--glass:rgba(255,255,255,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background: radial-gradient(1800px 900px at 10% -20%, #0d1b3d 0%, transparent 55%),
+                  radial-gradient(1600px 800px at 90% -15%, #0f2a6b 0%, transparent 55%),
+                  linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%);
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 32px}
+    header{position:sticky;top:0;z-index:50;background:rgba(7,14,34,.75);backdrop-filter: blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    .nav a:hover{color:#fff}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);color:#0a0f2a}
+    .btn-ghost{border:1px solid rgba(255,255,255,.14);color:#fff}
+    .hero{padding:96px 0 56px}
+    .hero h1{font-size:48px;line-height:1.08;margin:10px 0 12px}
+    .hero p{color:var(--muted);font-size:20px;max-width:760px;line-height:1.7}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.05);font-weight:700;color:#d8e2ff}
+    .grid{display:grid;gap:28px}
+    .three{grid-template-columns:repeat(3,1fr)}
+    .two{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--glass);border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .section{padding:84px 0}
+    .kpi{display:flex;gap:10px;align-items:center;color:var(--muted)}
+    .price{font-size:40px;font-weight:800}
+    .strike{color:#a5b2dd;text-decoration:line-through;margin-left:10px;font-size:20px}
+    .list{margin:12px 0 0;padding:0 0 0 20px;line-height:1.8}
+    .faq details{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin:10px 0}
+    footer{padding:48px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+    @media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero h1{font-size:40px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="/" style="font-weight:800;color:#fff;text-decoration:none">Cloud Mastery</a>
+      <div class="nav">
+        <a href="#programa">Programa</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="#checkout">Quero participar</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Mentoria de Carreira • Cloud, Data & AI</span>
+    <h1>Mentoria <span style="background:linear-gradient(90deg,#8ab4ff,#e6a6ff);-webkit-background-clip:text;background-clip:text;color:transparent">Cloud Mastery</span></h1>
+    <p>De <b>estagnado</b> a <b>disputado por recrutadores</b> em 6 semanas. Acesso direto comigo para desenhar sua estratégia, corrigir seu portfólio, elevar sua narrativa executiva e posicionar você para <b>Cloud Engineer / Architect / Data & AI</b> — do Brasil para o mundo.</p>
+    <div style="display:flex;gap:12px;margin-top:18px">
+      <a class="btn btn-primary" href="#planos">Escolher meu plano</a>
+      <a class="btn btn-ghost" href="#programa">Ver currículo</a>
+    </div>
+    <div class="grid three" style="margin-top:28px">
+      <div class="kpi">✅ 60+ profissionais treinados</div>
+      <div class="kpi">🏆 Casos em AWS, Google, Accenture</div>
+      <div class="kpi">🌍 Estratégia para mercado internacional</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programa">
+  <div class="container">
+    <div class="grid two">
+      <div class="card">
+        <h3>O que você vai dominar</h3>
+        <ul class="list">
+          <li>Plano de carreira sob medida (Cloud/Architect/Data & AI/Leadership)</li>
+          <li>Portfólio estratégico: VPC, CI/CD, observabilidade, GenAI on AWS</li>
+          <li>Posicionamento LinkedIn (título, resumo, vitrine de provas)</li>
+          <li>Narrativa de entrevistas (histórias, cases, STAR+ROI)</li>
+          <li>Roadmap de certificações que realmente abre portas</li>
+          <li>Playbook de salário, negociação e headhunting</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Formato e Entregáveis</h3>
+        <ul class="list">
+          <li>6 encontros ao vivo (Zoom) • gravações disponíveis</li>
+          <li>Templates: currículo, pitch, e-mails, roteiro de projetos</li>
+          <li>Revisões assíncronas do seu LinkedIn e portfólio</li>
+          <li>Grupo fechado para dúvidas e networking</li>
+          <li>Bônus: mini‑curso “AWS Architecture Essentials”</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="planos">
+  <div class="container">
+    <h2 style="margin:0 0 16px">Planos</h2>
+    <p class="muted">Escolha entre mentoria <b>em grupo</b> (10 vagas) ou <b>individual</b> (1:1).</p>
+    <div class="grid three" style="margin-top:20px">
+      <div class="card">
+        <h3>Grupo – 10 vagas</h3>
+        <p><span class="price">R$ 2.997</span> <span class="strike">R$ 3.997</span></p>
+        <ul class="list">
+          <li>6 encontros ao vivo em grupo</li>
+          <li>Revisões de LinkedIn + Portfólio</li>
+          <li>Templates de currículo e e‑mails</li>
+          <li>Acesso ao grupo fechado</li>
+        </ul>
+        <div style="margin-top:16px">
+          <a id="checkout" class="btn btn-primary" href="https://gum.co/checkout-grupo" target="_blank">Garantir minha vaga</a>
+        </div>
+      </div>
+      <div class="card" style="border:2px solid #9bd1ff">
+        <h3>Individual – 1:1 (mais indicado)</h3>
+        <p><span class="price">R$ 4.997</span> <span class="strike">R$ 6.997</span></p>
+        <ul class="list">
+          <li>6 sessões 1:1 (personalizadas)</li>
+          <li>Correções ilimitadas de materiais</li>
+          <li>Plano de 90 dias e acompanhamento</li>
+          <li>Suporte direto por 8 semanas</li>
+        </ul>
+        <div style="margin-top:16px">
+          <a class="btn btn-primary" href="https://gum.co/checkout-1a1" target="_blank">Aplicar para 1:1</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Corporate (time/empresa)</h3>
+        <p><span class="price">Sob consulta</span></p>
+        <ul class="list">
+          <li>Trilhas customizadas p/ squads</li>
+          <li>Planos de capability e KPIs</li>
+          <li>Casos reais e frameworks de arquitetura</li>
+        </ul>
+        <div style="margin-top:16px">
+          <a class="btn btn-ghost" href="mailto:contato@alessandrofalanque.com">Solicitar proposta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Serve para iniciantes?</summary><p>Sim. Há trilha para iniciantes e para transição de carreira. Ajusto os desafios conforme sua base.</p></details>
+    <details><summary>Tem garantia?</summary><p>Sim. 7 dias para experimentar. Se não fizer sentido, devolvo 100%.</p></details>
+    <details><summary>Ajuda com entrevistas?</summary><p>Sim: roteiro, simulações, storytelling e estratégia de oferta.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© Cloud Mastery – Mentoria por Alessandro Falanque</div>
+</footer>
+</body>
+</html>
