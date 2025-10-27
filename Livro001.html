@@ -15,12 +15,31 @@
     }
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      margin:0; 
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       color:var(--text);
       background:linear-gradient(180deg,var(--bg1),var(--bg2) 60%,var(--bg3));
+      word-wrap:break-word;
+      overflow-wrap:break-word;
     }
-    .container{max-width:1100px;margin:0 auto;padding:0 28px}
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 28px;
+      overflow-x:hidden;
+    }
     a{color:inherit}
+    h1, h2, h3, h4, h5, h6, p, li, div{
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+      word-break:break-word;
+      max-width:100%;
+    }
+    
+    img, video, iframe{
+      max-width:100%;
+      height:auto;
+    }
     
     /* Header */
     header{position:sticky;top:0;z-index:40;background:#0a1628;
@@ -35,37 +54,115 @@
       background:linear-gradient(90deg,#123a8a,#0e2f72);
       border-bottom:1px solid var(--line);
     }
-    .sticky .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0;flex-wrap:wrap}
+    .sticky .wrap{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 0;
+      flex-wrap:wrap;
+    }
+    .sticky .wrap > div{
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     .badge{display:inline-flex;gap:8px;align-items:center;
       background:#1e4a8a;color:#cfe7ff;border:1px solid rgba(123,220,255,.35);
       padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
-    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;
-      font-weight:800;text-decoration:none;cursor:pointer;white-space:nowrap}
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:14px 18px;
+      border-radius:12px;
+      font-weight:800;
+      text-decoration:none;
+      cursor:pointer;
+      white-space:nowrap;
+      max-width:100%;
+      justify-content:center;
+    }
     .btn.primary{background:linear-gradient(135deg,var(--primary1),var(--primary2));color:#0a0f2a}
     .btn.ghost{border:1px solid var(--line);color:#e2e8ff;background:transparent}
     
     /* Hero */
     .hero{padding:96px 0 36px}
-    .hero h1{font-size:44px;line-height:1.08;margin:12px 0}
-    .grad{background:linear-gradient(135deg,var(--primary1),var(--primary2));
-      -webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p{color:var(--muted);font-size:19px;line-height:1.7;max-width:760px}
+    .hero h1{
+      font-size:44px;
+      line-height:1.08;
+      margin:12px 0;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
+    .grad{
+      background:linear-gradient(135deg,var(--primary1),var(--primary2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.7;
+      max-width:760px;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     .grid{display:grid;gap:26px}
     .two{grid-template-columns:1.05fr .95fr}
-    .card{background:#0d1f3d;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card{
+      background:#0d1f3d;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+      hyphens:auto;
+      overflow:hidden;
+    }
+    .card h3{
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
+    .card p{
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     .proof{margin-top:8px;color:#cfe0ff;opacity:.9;font-size:14px}
     
     /* Offer stack / bonuses */
     .checks{list-style:none;padding:0;margin:14px 0}
-    .checks li{padding-left:28px;position:relative;margin:10px 0;color:#d9e5ff}
+    .checks li{
+      padding-left:28px;
+      position:relative;
+      margin:10px 0;
+      color:#d9e5ff;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     .checks li:before{content:"✓";position:absolute;left:0;top:0;color:#9bd1ff;font-weight:900}
     .bonuses{display:grid;gap:10px;margin-top:10px}
-    .bonus{background:#0a1628;border:1px dashed var(--line);border-radius:14px;padding:12px;font-size:14px}
+    .bonus{
+      background:#0a1628;
+      border:1px dashed var(--line);
+      border-radius:14px;
+      padding:12px;
+      font-size:14px;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     
     /* Pricing */
     .pricing{display:grid;gap:22px;grid-template-columns:repeat(3,minmax(0,1fr))}
-    .price .value{font-size:26px;margin:6px 0}
+    .price .value{font-size:26px;margin:6px 0;word-wrap:break-word}
     .price s{opacity:.6}
+    .price h3, .price .micro{
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     
     /* Progress bar */
     .progress{height:10px;background:#0a1628;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
@@ -74,7 +171,14 @@
     
     /* FAQ */
     .faq{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
-    .faq .q{background:#0d1f3d;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .faq .q{
+      background:#0d1f3d;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      word-wrap:break-word;
+      overflow-wrap:break-word;
+    }
     
     /* Footer */
     footer{padding:40px 0;color:#b8c7f0;text-align:center;border-top:1px solid var(--line);margin-top:40px}
@@ -121,11 +225,36 @@
       }
       
       /* Cards mobile */
-      .card{padding:18px;font-size:15px}
-      .card h3{font-size:20px;margin-top:8px}
-      .checks li{font-size:14px;padding-left:24px}
+      .card{
+        padding:18px;
+        font-size:15px;
+        overflow:hidden;
+      }
+      .card h3{
+        font-size:20px;
+        margin-top:8px;
+        word-wrap:break-word;
+        overflow-wrap:break-word;
+      }
+      .card p{
+        word-wrap:break-word;
+        overflow-wrap:break-word;
+      }
+      .checks li{
+        font-size:14px;
+        padding-left:24px;
+        word-wrap:break-word;
+        overflow-wrap:break-word;
+        word-break:break-word;
+      }
       .bonuses{gap:8px}
-      .bonus{padding:10px;font-size:13px}
+      .bonus{
+        padding:10px;
+        font-size:13px;
+        word-wrap:break-word;
+        overflow-wrap:break-word;
+        word-break:break-word;
+      }
       
       /* Pricing mobile */
       .pricing{
@@ -154,6 +283,9 @@
       .faq .q{
         padding:14px;
         font-size:14px;
+        word-wrap:break-word;
+        overflow-wrap:break-word;
+        word-break:break-word;
       }
       
       /* Typography adjustments */
