@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/mentoria", "destination": "/Mentoria001.html" },
     { "source": "/workshop", "destination": "/Workshop001.html" },
-    { "source": "/livro", "destination": "/Livro001.html" }
+    { "source": "/livro", "destination": "/Livro001.html" },
+    { "source": "/en", "destination": "/index.en.html" }
   ]
 }

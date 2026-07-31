@@ -3,7 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cloud Mastery – Carreira em Cloud, Data & AI</title>
+  <title>Cloud Mastery – Sua carreira em Cloud, Data & AI</title>
+
+  <!-- SEO + compartilhamento (LinkedIn/Instagram) -->
+  <meta name="description" content="Mentoria de carreira em Cloud, Data & AI com quem já atuou em AWS, Google e Accenture. Portfólio, LinkedIn magnético, entrevistas e sua próxima vaga — sem adivinhação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cloud Mastery – Sua carreira em Cloud, Data & AI" />
+  <meta property="og:description" content="Mentoria personalizada para você conquistar sua vaga de Cloud / Data Engineer. Método aplicado em projetos reais de mercado." />
+  <meta property="og:url" content="https://alessandrofalanque.com" />
+  <!-- TODO: suba uma imagem 1200x630 (ex: /og-cover.png) para o card ficar bonito ao compartilhar -->
+  <meta property="og:image" content="https://alessandrofalanque.com/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -239,6 +250,83 @@
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
     
+    /* Featured (destaque) card */
+    .card.featured {
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 0 1px var(--accent-purple), 0 12px 32px rgba(167, 139, 250, 0.18);
+    }
+    .card-flag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      padding: 6px 16px;
+      border-bottom-right-radius: 12px;
+      text-transform: uppercase;
+    }
+    .price-tag {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 4px 0 4px;
+      flex-wrap: wrap;
+    }
+    .price-tag .amount { font-size: 30px; font-weight: 800; color: var(--text-primary); }
+    .price-tag .note { font-size: 14px; color: var(--text-muted); }
+
+    /* Lead capture */
+    .capture {
+      background: linear-gradient(135deg, rgba(18,58,138,0.35), rgba(167,139,250,0.18));
+      border: 1px solid rgba(167,139,250,0.3);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .capture h3 { font-size: 26px; margin-bottom: 10px; }
+    .capture p { color: var(--text-secondary); max-width: 560px; margin: 0 auto 24px; }
+    .capture-form {
+      display: flex;
+      gap: 12px;
+      max-width: 520px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .capture-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text-primary);
+      font-size: 16px;
+      font-family: inherit;
+    }
+    .capture-form input::placeholder { color: var(--text-muted); }
+    .capture-form input:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+    .capture small { display: block; color: var(--text-muted); font-size: 13px; margin-top: 14px; }
+
+    /* Testimonials */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .testi {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .testi p { color: var(--text-secondary); font-size: 16px; line-height: 1.7; font-style: italic; }
+    .testi .who { margin-top: 16px; font-weight: 700; color: var(--text-primary); font-style: normal; font-size: 15px; }
+    .testi .role { color: var(--text-muted); font-size: 13px; font-style: normal; }
+
     /* Coming Soon Ribbon */
     .coming-soon-ribbon {
       position: absolute;
@@ -516,6 +604,7 @@
           <a href="#produtos">Produtos</a>
           <a href="#prova">Credibilidade</a>
           <a href="#faq">FAQ</a>
+          <a href="/index.en.html">🇦🇺 EN</a>
           <a class="btn btn-secondary" style="padding: 12px 24px; font-size: 14px;" href="mailto:contato@alessandrofalanque.com">Contato</a>
         </div>
       </nav>
@@ -549,23 +638,27 @@
     <section class="hero">
       <div class="container">
         <div class="badge">
-          🚀 Lançamento · 40% OFF para os 100 primeiros
+          🎯 Vagas limitadas de mentoria neste mês
         </div>
-        
+
         <h1>
-          Carreira em <span class="gradient-text">Cloud, Data & AI</span><br>sem adivinhação
+          Conquiste sua vaga em <span class="gradient-text">Cloud, Data & AI</span><br>com quem já contratou e formou dezenas
         </h1>
-        
+
         <p class="lead">
-          Mentoria personalizada, Workshop prático e Livro completo — três caminhos complementares 
-          para você sair do conhecimento solto e construir portfólio, autoridade e resultados reais. 
-          Método aplicado em projetos de mercado (AWS, Google, Accenture, DNX).
+          Mentoria individual de carreira para você sair do conhecimento solto e chegar à sua próxima
+          vaga: portfólio que prova valor, LinkedIn que atrai recrutador e entrevistas que você domina.
+          Método aplicado em projetos reais (AWS, Google, Accenture, DNX).
         </p>
-        
+
         <div class="btn-group">
-          <a class="btn btn-primary" href="#produtos">Ver Produtos</a>
-          <a class="btn btn-secondary" href="#prova">Ver Credenciais</a>
+          <!-- TODO: troque o link abaixo pelo seu Calendly/Cal.com real -->
+          <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener">Agendar conversa gratuita (15 min)</a>
+          <a class="btn btn-secondary" href="#produtos">Ver como funciona</a>
         </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px;">
+          Sem compromisso · entenda se a mentoria faz sentido para o seu momento
+        </p>
       </div>
     </section>
 
@@ -574,12 +667,37 @@
         <h2>Escolha seu próximo passo</h2>
         
         <div class="cards-grid">
-          <!-- Card 1: Livro -->
+          <!-- Card 1: Mentoria (PRINCIPAL) -->
+          <article class="card featured">
+            <div class="card-flag">⭐ Mais procurado</div>
+            <h3 style="margin-top: 20px;">💼 Mentoria de Carreira 1:1</h3>
+            <p>
+              Acompanhamento individual comigo para desenhar sua estratégia, corrigir seu portfólio
+              e posicionar você para sua próxima vaga em Cloud / Data & AI — do Brasil para o mundo.
+            </p>
+            <div class="price-tag">
+              <span class="amount">AUD 1.500</span>
+              <span class="note">à vista · ou 2× AUD 850</span>
+            </div>
+            <ul>
+              <li>6 sessões 1:1 personalizadas</li>
+              <li>LinkedIn magnético + portfólio revisado</li>
+              <li>Simulações de entrevista com feedback</li>
+              <li>Plano de 90 dias com acompanhamento</li>
+            </ul>
+            <div class="card-actions">
+              <!-- TODO: troque pelo seu Calendly/Cal.com real -->
+              <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener">Agendar conversa</a>
+              <a class="btn btn-secondary" href="/Mentoria001.html">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Livro -->
           <article class="card">
             <h3>📚 Livro: Cloud Mastery</h3>
             <p>
-              De Zero a Cloud Engineer em 90 dias. Práticas de ambiente real 
-              com VPC, IAM, EC2/Lambda, S3/RDS e projeto completo de portfólio. 
+              De Zero a Cloud Engineer em 90 dias. Práticas de ambiente real
+              com VPC, IAM, EC2/Lambda, S3/RDS e projeto completo de portfólio.
               Tudo que você precisa para conseguir o job.
             </p>
             <ul>
@@ -594,13 +712,13 @@
             </div>
           </article>
 
-          <!-- Card 2: Workshop -->
+          <!-- Card 3: Workshop -->
           <article class="card">
             <div class="coming-soon-ribbon">EM BREVE</div>
             <h3>🚀 Workshop GenAI na AWS</h3>
             <p>
-              Fim de semana intensivo para publicar sua primeira API de GenAI 
-              com Lambda + API Gateway + Bedrock. Do zero ao deploy com 
+              Fim de semana intensivo para publicar sua primeira API de GenAI
+              com Lambda + API Gateway + Bedrock. Do zero ao deploy com
               arquitetura de produção.
             </p>
             <ul>
@@ -614,28 +732,49 @@
               <a class="btn btn-secondary btn-disabled">Ver Programa</a>
             </div>
           </article>
-
-          <!-- Card 3: Mentoria -->
-          <article class="card">
-            <div class="coming-soon-ribbon">EM BREVE</div>
-            <h3>💼 Mentoria de Carreira</h3>
-            <p>
-              Grupo exclusivo (10 vagas) ou sessões 1:1. Roadmap personalizado, 
-              construção de portfólio, otimização de LinkedIn, simulações de entrevista 
-              e estratégia completa para Cloud Engineer → Management.
-            </p>
-            <ul>
-              <li>Transição e aceleração de carreira</li>
-              <li>Headhunting e posicionamento estratégico</li>
-              <li>Plano de 90 dias com accountability</li>
-              <li>Negociação salarial e progressão</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-primary btn-disabled">Quero Mentoria</a>
-              <a class="btn btn-secondary btn-disabled">Ver Planos</a>
-            </div>
-          </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="isca">
+      <div class="container">
+        <div class="capture">
+          <h3>📩 Receba o 1º capítulo do livro grátis</h3>
+          <p>
+            Deixe seu melhor e-mail e receba na hora o capítulo de abertura de <b>Cloud Mastery</b> —
+            além de dicas práticas de carreira em Cloud direto na sua caixa.
+          </p>
+          <!-- TODO: troque o action pelo seu endpoint (Formspree, ConvertKit, Mailchimp, etc.) -->
+          <form class="capture-form" action="https://formspree.io/f/SEU_ID" method="POST">
+            <input type="email" name="email" placeholder="seu@email.com" required />
+            <button type="submit" class="btn btn-primary">Quero o capítulo</button>
+          </form>
+          <small>Sem spam. Cancele quando quiser.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="depoimentos" style="background: rgba(0, 0, 0, 0.2);">
+      <div class="container">
+        <h2>Quem já passou pela mentoria</h2>
+        <div class="testi-grid">
+          <!-- TODO: troque pelo depoimento REAL da sua aluna (peça uma frase + nome + cargo/onde foi contratada) -->
+          <div class="testi">
+            <p>"Em poucas semanas meu LinkedIn começou a atrair recrutadores e eu finalmente
+            soube o que colocar no portfólio. Fez toda a diferença na minha transição para dados."</p>
+            <div class="who">— [Nome da aluna]</div>
+            <div class="role">Transição para Data Engineer</div>
+          </div>
+          <div class="testi">
+            <p>"O acompanhamento individual e o plano de 90 dias me deram clareza e direção.
+            Parei de estudar no escuro e passei a agir com estratégia."</p>
+            <div class="who">— [Nome]</div>
+            <div class="role">[Cargo / empresa]</div>
+          </div>
+        </div>
+        <p style="text-align:center; color: var(--text-muted); font-size: 14px; margin-top: 20px;">
+          <!-- Assim que tiver mais resultados, adicione aqui — prova social de aluno converte mais que qualquer bio. -->
+        </p>
       </div>
     </section>
 
@@ -707,6 +846,16 @@
               Workshop tem suporte técnico por 30 dias após conclusão.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="fechamento">
+      <div class="container">
+        <div class="capture" style="background: linear-gradient(135deg, var(--accent-blue), rgba(167,139,250,0.25));">
+          <h3>Pronto para destravar sua carreira em Cloud?</h3>
+          <p>Agende uma conversa gratuita de 15 minutos. Sem compromisso — só um diagnóstico honesto do seu momento e do caminho mais curto até sua próxima vaga.</p>
+          <!-- TODO: troque pelo seu Calendly/Cal.com real -->
+          <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener" style="padding: 16px 40px;">Agendar minha conversa</a>
         </div>
       </div>
     </section>
