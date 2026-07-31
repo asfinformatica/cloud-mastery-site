@@ -3,6 +3,8 @@
     { "source": "/mentoria", "destination": "/Mentoria001.html" },
     { "source": "/workshop", "destination": "/Workshop001.html" },
     { "source": "/livro", "destination": "/Livro001.html" },
-    { "source": "/en", "destination": "/index.en.html" }
+    { "source": "/en", "destination": "/au/" },
+    { "source": "/au", "destination": "/au/index.html" },
+    { "source": "/br", "destination": "/br/index.html" }
   ]
 }
