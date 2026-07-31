@@ -258,7 +258,7 @@
 
         <div class="btn-group">
           <!-- TODO: replace with your real Calendly/Cal.com link -->
-          <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener">Book a free chat (15 min)</a>
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Book a free chat (30 min)</a>
           <a class="btn btn-secondary" href="#products">See how it works</a>
         </div>
         <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px;">
@@ -292,7 +292,7 @@
             </ul>
             <div class="card-actions">
               <!-- TODO: replace with your real Calendly/Cal.com link -->
-              <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener">Book a chat</a>
+              <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Book a chat</a>
               <a class="btn btn-secondary" href="/Mentoria001.html">See details</a>
             </div>
           </article>
@@ -347,9 +347,18 @@
             Drop your best email and get the opening chapter of <b>Cloud Mastery</b> straight away —
             plus practical Cloud career tips in your inbox.
           </p>
-          <!-- TODO: replace the action with your endpoint (Formspree, ConvertKit, Mailchimp, etc.) -->
+          <!-- ============================================================
+               LEAD CAPTURE FORM — TO ACTIVATE (free, ~2 min):
+               1. Create an account at https://formspree.io  (free plan)
+               2. Create a "New form" and copy the ID (e.g. mzzabcde)
+               3. Replace YOUR_ID below with your real ID
+               Captured emails land in your inbox and the Formspree dashboard.
+               ============================================================ -->
           <form class="capture-form" action="https://formspree.io/f/YOUR_ID" method="POST">
+            <input type="text" name="name" placeholder="Your name" required />
             <input type="email" name="email" placeholder="you@email.com" required />
+            <input type="hidden" name="_subject" value="New lead — first chapter (AU)" />
+            <input type="hidden" name="market" value="Australia" />
             <button type="submit" class="btn btn-primary">Send me the chapter</button>
           </form>
           <small>No spam. Unsubscribe anytime.</small>
@@ -457,9 +466,9 @@
       <div class="container">
         <div class="capture" style="background: linear-gradient(135deg, var(--accent-blue), rgba(167,139,250,0.25));">
           <h3>Ready to unlock your Cloud career?</h3>
-          <p>Book a free 15-minute chat. No obligation — just an honest read on where you are and the shortest path to your next role.</p>
+          <p>Book a free 30-minute chat. No obligation — just an honest read on where you are and the shortest path to your next role.</p>
           <!-- TODO: replace with your real Calendly/Cal.com link -->
-          <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener" style="padding: 16px 40px;">Book my chat</a>
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener" style="padding: 16px 40px;">Book my chat</a>
         </div>
       </div>
     </section>

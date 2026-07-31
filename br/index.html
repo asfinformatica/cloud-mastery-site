@@ -659,7 +659,7 @@
 
         <div class="btn-group">
           <!-- TODO: troque o link abaixo pelo seu Calendly/Cal.com real -->
-          <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener">Agendar conversa gratuita (15 min)</a>
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Agendar conversa gratuita (30 min)</a>
           <a class="btn btn-secondary" href="#produtos">Ver como funciona</a>
         </div>
         <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px;">
@@ -681,10 +681,9 @@
               Acompanhamento individual comigo para desenhar sua estratégia, corrigir seu portfólio
               e posicionar você para sua próxima vaga em Cloud / Data & AI — do Brasil para o mundo.
             </p>
-            <!-- TODO: defina o preço em R$ para o mercado brasileiro -->
             <div class="price-tag">
-              <span class="amount">R$ [definir]</span>
-              <span class="note">à vista · ou parcelado no cartão</span>
+              <span class="amount">R$ 4.300</span>
+              <span class="note"><s>R$ 4.800</s> à vista · economize R$ 500 · ou 4× de R$ 1.200</span>
             </div>
             <ul>
               <li>6 sessões 1:1 personalizadas</li>
@@ -694,7 +693,7 @@
             </ul>
             <div class="card-actions">
               <!-- TODO: troque pelo seu Calendly/Cal.com real -->
-              <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener">Agendar conversa</a>
+              <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Agendar conversa</a>
               <a class="btn btn-secondary" href="/Mentoria001.html">Ver detalhes</a>
             </div>
           </article>
@@ -751,9 +750,18 @@
             Deixe seu melhor e-mail e receba na hora o capítulo de abertura de <b>Cloud Mastery</b> —
             além de dicas práticas de carreira em Cloud direto na sua caixa.
           </p>
-          <!-- TODO: troque o action pelo seu endpoint (Formspree, ConvertKit, Mailchimp, etc.) -->
+          <!-- ============================================================
+               FORMULÁRIO DE CAPTURA — PARA ATIVAR (grátis, ~2 min):
+               1. Crie conta em https://formspree.io  (plano free)
+               2. Crie um "New form" e copie o ID (ex: mzzabcde)
+               3. Troque SEU_ID abaixo pelo seu ID real
+               Os e-mails cadastrados chegam na sua caixa e ficam no painel Formspree.
+               ============================================================ -->
           <form class="capture-form" action="https://formspree.io/f/SEU_ID" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome" required />
             <input type="email" name="email" placeholder="seu@email.com" required />
+            <input type="hidden" name="_subject" value="Novo lead — 1º capítulo (BR)" />
+            <input type="hidden" name="mercado" value="Brasil" />
             <button type="submit" class="btn btn-primary">Quero o capítulo</button>
           </form>
           <small>Sem spam. Cancele quando quiser.</small>
@@ -860,9 +868,9 @@
       <div class="container">
         <div class="capture" style="background: linear-gradient(135deg, var(--accent-blue), rgba(167,139,250,0.25));">
           <h3>Pronto para destravar sua carreira em Cloud?</h3>
-          <p>Agende uma conversa gratuita de 15 minutos. Sem compromisso — só um diagnóstico honesto do seu momento e do caminho mais curto até sua próxima vaga.</p>
+          <p>Agende uma conversa gratuita de 30 minutos. Sem compromisso — só um diagnóstico honesto do seu momento e do caminho mais curto até sua próxima vaga.</p>
           <!-- TODO: troque pelo seu Calendly/Cal.com real -->
-          <a class="btn btn-primary" href="https://cal.com/alessandro-falanque" target="_blank" rel="noopener" style="padding: 16px 40px;">Agendar minha conversa</a>
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener" style="padding: 16px 40px;">Agendar minha conversa</a>
         </div>
       </div>
     </section>
