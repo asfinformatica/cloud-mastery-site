@@ -49,7 +49,16 @@
     .muted{color:var(--muted)}
     .faq details{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin:10px 0}
     footer{padding:48px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
-    @media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero h1{font-size:40px}}
+    .truths{grid-template-columns:repeat(2,1fr)}
+    .truth{position:relative;padding-left:0}
+    .truth .mark{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8ab4ff;margin-bottom:10px}
+    .truth h3{font-size:22px;line-height:1.25;margin:0 0 10px}
+    .truth h3 .hl{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .truth p{color:var(--muted);line-height:1.65;margin:0}
+    .section-intro{max-width:760px;margin:0 0 8px}
+    .section-intro h2{font-size:34px;margin:0 0 10px}
+    .section-intro p{color:var(--muted);font-size:19px;line-height:1.6}
+    @media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.truths{grid-template-columns:1fr}.hero h1{font-size:40px}}
   </style>
 </head>
 <body>
@@ -58,6 +67,7 @@
     <nav>
       <a href="/br/" style="font-weight:800;color:#fff;text-decoration:none">Cloud Mastery</a>
       <div class="nav">
+        <a href="#caminho">O caminho</a>
         <a href="#programa">Programa</a>
         <a href="#investimento">Investimento</a>
         <a href="#faq">FAQ</a>
@@ -81,6 +91,40 @@
       <div class="kpi">✅ 60+ profissionais treinados</div>
       <div class="kpi">🏆 Casos em AWS, Google, Accenture</div>
       <div class="kpi">🌍 Estratégia para mercado internacional</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="caminho">
+  <div class="container">
+    <div class="section-intro">
+      <h2>O que ninguém te conta sobre a vaga lá fora</h2>
+      <p>Depois de anos construindo carreira internacional, aprendi que o caminho é diferente do que te ensinam. Estas são as verdades que mudam o jogo — e que viram estratégia na mentoria:</p>
+    </div>
+    <div class="grid truths" style="margin-top:28px">
+      <div class="card truth">
+        <span class="mark">Verdade 01</span>
+        <h3>Certificação não te contrata. <span class="hl">Portfólio contrata.</span></h3>
+        <p>Recrutador lá fora quer ver o que você construiu — uma arquitetura real na nuvem, um pipeline que funciona. O certificado abre uma conversa; o portfólio fecha a vaga. A maioria inverte a ordem e trava.</p>
+      </div>
+      <div class="card truth">
+        <span class="mark">Verdade 02</span>
+        <h3>Inglês técnico vale mais que <span class="hl">inglês perfeito.</span></h3>
+        <p>Você não precisa de sotaque impecável. Precisa defender uma decisão de arquitetura e contar o impacto do seu trabalho em inglês. Muita gente boa se sabota achando que "ainda não está fluente o suficiente".</p>
+      </div>
+      <div class="card truth">
+        <span class="mark">Verdade 03</span>
+        <h3>Aplicar em vaga aberta é o <span class="hl">caminho mais lento.</span></h3>
+        <p>As melhores oportunidades internacionais vêm por rede, referral e um LinkedIn que atrai o recrutador até você — não por enviar currículo em massa para o vácuo. É posicionamento, não sorte.</p>
+      </div>
+      <div class="card truth">
+        <span class="mark">Verdade 04</span>
+        <h3>Seu LinkedIn é seu <span class="hl">currículo de verdade.</span></h3>
+        <p>O recrutador global te encontra antes de receber qualquer PDF. Se o seu perfil não conta uma história clara de valor, você é invisível — por mais competente que seja. Aqui é onde a maioria perde a vaga sem nem saber.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px">
+      <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Quero o mapa completo — agendar conversa</a>
     </div>
   </div>
 </section>
