@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en-au">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AWS Cloud Engineer Book – The Path to Success | Cloud Mastery</title>
+  <meta name="description" content="The complete guide to starting your career as an AWS Cloud Engineer — from cloud fundamentals to certifications, by Alessandro Falanque." />
+  <meta property="og:type" content="book" />
+  <meta property="og:title" content="AWS Cloud Engineer Book – The Path to Success" />
+  <meta property="og:description" content="The complete guide to starting your cloud career, from fundamentals to certifications." />
+  <meta property="og:url" content="https://alessandrofalanque.com/au/livro.html" />
+  <meta property="og:image" content="https://alessandrofalanque.com/livro-capa.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en-au" href="https://alessandrofalanque.com/au/livro.html" />
+  <link rel="alternate" hreflang="pt-br" href="https://alessandrofalanque.com/br/livro.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0b1b3b;--bg2:#0e2f72;--bg3:#123a8a;
+      --text:#e9eefc;--muted:#b8c7f0;--accent:#6ad1ff;--primary:#7a8bff;
+      --radius:18px;--shadow:0 10px 40px rgba(0,0,0,.25);--glass:rgba(255,255,255,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);
+      background: radial-gradient(1800px 900px at 10% -20%, #0d1b3d 0%, transparent 55%),
+                  radial-gradient(1600px 800px at 90% -15%, #0f2a6b 0%, transparent 55%),
+                  linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%);}
+    .container{max-width:1120px;margin:0 auto;padding:0 32px}
+    header{position:sticky;top:0;z-index:50;background:rgba(7,14,34,.75);backdrop-filter: blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    .nav a:hover{color:#fff}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);color:#0a0f2a}
+    .btn-ghost{border:1px solid rgba(255,255,255,.14);color:#fff}
+    .hero{padding:72px 0 40px}
+    .grid{display:grid;gap:36px}
+    .hero-grid{grid-template-columns:1fr .8fr;align-items:center}
+    .two{grid-template-columns:1fr 1fr}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.05);font-weight:700;color:#d8e2ff;font-size:14px}
+    h1{font-size:44px;line-height:1.1;margin:14px 0 12px}
+    .grad{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:19px;line-height:1.65;max-width:620px}
+    .proof{margin-top:14px;color:#cfe0ff;opacity:.9;font-size:14px}
+    .cover-wrap{display:flex;justify-content:center}
+    .cover{width:290px;max-width:80%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .section{padding:48px 0}
+    .card{background:var(--glass);border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 12px;font-size:20px}
+    .checks{list-style:none;padding:0;margin:0;line-height:1.7}
+    .checks li{padding-left:28px;position:relative;margin:10px 0;color:#d9e5ff}
+    .checks li:before{content:"✓";position:absolute;left:0;top:0;color:#9bd1ff;font-weight:900}
+    .toc{columns:2;column-gap:32px;list-style:none;padding:0;margin:0}
+    .toc li{break-inside:avoid;margin:0 0 12px;padding-left:26px;position:relative;color:#d9e5ff;line-height:1.5}
+    .toc li:before{content:"▸";position:absolute;left:0;color:#8ab4ff;font-weight:900}
+    h2{font-size:32px;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .cta{background:linear-gradient(135deg, rgba(18,58,138,.5), rgba(167,139,250,.25));border:1px solid rgba(167,139,250,.3);border-radius:var(--radius);padding:34px;text-align:center}
+    .cta h2{margin:0 0 8px}
+    .cta p{color:var(--muted);max-width:560px;margin:0 auto 22px}
+    .form{display:flex;gap:12px;max-width:520px;margin:0 auto;flex-wrap:wrap}
+    .form input{flex:1;min-width:200px;padding:15px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;font-size:16px;font-family:inherit}
+    .form input::placeholder{color:#9fb0d0}
+    .form input:focus{outline:2px solid #8ab4ff}
+    .cta small{display:block;color:var(--muted);font-size:13px;margin-top:14px}
+    footer{padding:44px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06);margin-top:24px}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}.toc{columns:1}h1{font-size:32px}.hero p{font-size:16px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="/au/" style="font-weight:800;color:#fff;text-decoration:none">Cloud Mastery</a>
+      <div class="nav">
+        <a href="#find">What's inside</a>
+        <a href="#contents">Contents</a>
+        <a href="#author">Author</a>
+        <a href="/br/livro.html">🇧🇷 PT</a>
+        <a class="btn btn-primary" href="#notify">Notify me</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container grid hero-grid">
+    <div>
+      <span class="badge">📘 E-book · launching soon</span>
+      <h1>The Path to Success:<br><span class="grad">AWS Cloud Engineer</span></h1>
+      <p>The complete guide to <b>starting your cloud career</b> — from cloud fundamentals to
+      certifications, with the real journey of someone who's trained hundreds of professionals and
+      works from anywhere to the world. Not a generic technical manual: it's the map I wish I'd had when I started.</p>
+      <div class="proof">By Alessandro Falanque · 25+ years in Cloud, Data &amp; AI · AWS and GCP</div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#notify">Notify me at launch</a>
+        <a class="btn btn-ghost" href="#contents">See the contents</a>
+      </div>
+    </div>
+    <div class="cover-wrap">
+      <img class="cover" src="/livro-capa.png" alt="Cover of the book The Path to Success — AWS Cloud Engineer by Alessandro Falanque" />
+    </div>
+  </div>
+</section>
+
+<section class="section" id="find">
+  <div class="container grid two">
+    <div class="card">
+      <h3>What you'll find</h3>
+      <ul class="checks">
+        <li>My real journey — the wins and the mistakes (so you don't pay the same price)</li>
+        <li>Practical frameworks from a Cloud Engineer's day to day</li>
+        <li>Hands-on exercises that build a real portfolio</li>
+        <li>A certification and interview roadmap with production checklists</li>
+        <li>30/60/90-day plans to speed up your employability</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Who it's for</h3>
+      <ul class="checks">
+        <li>People <b>starting out</b> in a Cloud / AWS career</li>
+        <li>Professionals <b>transitioning</b> into cloud and data</li>
+        <li>Self-paced learners who want a <b>clear path</b></li>
+        <li>Those aiming at the global market and remote work</li>
+      </ul>
+      <p class="muted" style="margin:14px 0 0">“Cloud computing isn't the future — it's the present. Will you watch from the sidelines or step onto the field?”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contents">
+  <div class="container">
+    <h2>Contents</h2>
+    <p class="muted" style="margin:0 0 22px">The book's chapters, from zero to your first role.</p>
+    <ul class="toc">
+      <li>Preface</li>
+      <li>Introduction</li>
+      <li>Acknowledgements</li>
+      <li>Cloud Computing Fundamentals</li>
+      <li>Core Concepts of Cloud Computing</li>
+      <li>Cloud Computing Platforms</li>
+      <li>Building Technical Skills</li>
+      <li>Artificial Intelligence &amp; Generative AI in the Cloud</li>
+      <li>Cloud Computing Certifications</li>
+      <li>Building Your Practical Experience</li>
+      <li>Challenges &amp; Future Trends</li>
+      <li>Conclusion</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="author">
+  <div class="container">
+    <div class="card">
+      <h3>About the author</h3>
+      <p class="muted" style="line-height:1.75;margin:0">
+        With over <b>25 years of experience</b> in technology and digital transformation, I'm a specialist in
+        <b>Cloud Computing, Data &amp; AI</b>. I've led strategic migration and operations projects in highly
+        complex environments, mastering platforms like <b>AWS and GCP</b>. I've helped <b>hundreds of professionals</b>
+        enter and grow in Cloud — with projects in South Africa, complex migrations and teams built from scratch.
+        For me, growing a career goes beyond technology: it takes mindset, strategy and action. My mission is to
+        turn knowledge into concrete results.
+      </p>
+      <p style="margin:14px 0 0;font-weight:700">— Alessandro Falanque · Cloud Engineer • AWS | Career Mentor</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="notify">
+  <div class="container">
+    <div class="cta">
+      <h2>Get notified at launch</h2>
+      <p>Drop your email and be the first to know when the book is out — plus the first chapter free.</p>
+      <form class="form" action="https://formspree.io/f/xgogjeoy" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="you@email.com" required />
+        <input type="hidden" name="_subject" value="Waitlist — AWS Cloud Engineer book (AU)" />
+        <input type="hidden" name="source" value="Book / waitlist" />
+        <button type="submit" class="btn btn-primary">Notify me</button>
+      </form>
+      <small>No spam. Unsubscribe anytime.</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2025 Cloud Mastery – Book by Alessandro Falanque · <a href="/au/" style="color:var(--accent)">Back to home</a></div>
+</footer>
+</body>
+</html>

@@ -3,7 +3,8 @@
     { "source": "/mentoria", "destination": "/br/mentoria.html" },
     { "source": "/mentoria/en", "destination": "/au/mentoria.html" },
     { "source": "/workshop", "destination": "/Workshop001.html" },
-    { "source": "/livro", "destination": "/Livro001.html" },
+    { "source": "/livro", "destination": "/br/livro.html" },
+    { "source": "/livro/en", "destination": "/au/livro.html" },
     { "source": "/en", "destination": "/au/" },
     { "source": "/au", "destination": "/au/index.html" },
     { "source": "/br", "destination": "/br/index.html" }
