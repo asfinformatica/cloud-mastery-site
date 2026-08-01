@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/Livro001.html", "destination": "/br/livro.html", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/mentoria", "destination": "/br/mentoria.html" },
     { "source": "/mentoria/en", "destination": "/au/mentoria.html" },
