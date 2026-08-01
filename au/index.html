@@ -95,10 +95,10 @@
     .section { padding: 60px 0; }
     h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 48px; text-align: center; font-weight: 800; letter-spacing: -0.5px; }
 
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 40px; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 40px; align-items: start; }
     .card {
       background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 32px;
-      display: flex; flex-direction: column; gap: 16px; transition: all 0.3s; height: 100%; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 16px; transition: all 0.3s; position: relative; overflow: hidden;
     }
     .card:hover { background: var(--card-hover); border-color: rgba(96, 165, 250, 0.3); transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); }
 
@@ -320,6 +320,12 @@
               <li>15 hands-on portfolio projects</li>
               <li>Ready templates + bonus mini-mentoring</li>
             </ul>
+            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">You'll be able to</p>
+            <ul>
+              <li>Provision AWS infrastructure securely</li>
+              <li>Ship a portfolio project end to end</li>
+              <li>Speak the market's language in interviews</li>
+            </ul>
             <div class="card-actions">
               <a class="btn btn-primary" href="/Livro001.html">Buy Now</a>
               <a class="btn btn-secondary" href="Livro001.html#sumario">See Contents</a>
@@ -345,6 +351,12 @@
               <li>Observability and cost control</li>
               <li>Guided deploy with reusable templates</li>
               <li>Certificate of completion</li>
+            </ul>
+            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">You'll be able to</p>
+            <ul>
+              <li>Ship a GenAI API to production</li>
+              <li>Control LLM costs on AWS</li>
+              <li>Reuse the architecture in your own projects</li>
             </ul>
             <div class="card-actions">
               <a class="btn btn-primary btn-disabled">Enrol</a>
