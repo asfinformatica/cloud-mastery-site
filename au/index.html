@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cloud Mastery – Your career in Cloud, Data & AI</title>
+
+  <!-- SEO + social sharing (LinkedIn/Instagram) -->
+  <meta name="description" content="Career mentoring in Cloud, Data & AI from someone who's worked at AWS, Google and Accenture. Portfolio, magnetic LinkedIn, interviews and your next role — no guesswork." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cloud Mastery – Your career in Cloud, Data & AI" />
+  <meta property="og:description" content="1:1 career mentoring to land your next Cloud / Data Engineer role in Australia. A method applied on real-world projects." />
+  <meta property="og:url" content="https://alessandrofalanque.com/au/" />
+  <meta property="og:locale" content="en_AU" />
+  <meta property="og:image" content="https://alessandrofalanque.com/og-cover-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- hreflang: tells Google that /br and /au are the same page in different languages/markets -->
+  <link rel="alternate" hreflang="en-au" href="https://alessandrofalanque.com/au/" />
+  <link rel="alternate" hreflang="pt-br" href="https://alessandrofalanque.com/br/" />
+  <link rel="alternate" hreflang="x-default" href="https://alessandrofalanque.com/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #0a1628;
+      --bg-mid: #0e2f72;
+      --accent-blue: #123a8a;
+      --accent-purple: #a78bfa;
+      --text-primary: #ffffff;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 100%);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container { width: min(1200px, 92%); margin: 0 auto; padding: 0 20px; }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 20px; }
+    .brand { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.2s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .mobile-menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 8px; }
+    .mobile-menu-toggle span { width: 24px; height: 2px; background: var(--text-primary); transition: all 0.3s; }
+
+    .hero { padding: 80px 0 60px; text-align: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(96, 165, 250, 0.1); color: var(--accent-blue);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      padding: 10px 20px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 32px;
+    }
+    h1 { font-size: clamp(36px, 5vw, 64px); line-height: 1.1; margin-bottom: 24px; font-weight: 800; letter-spacing: -1px; }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lead { font-size: clamp(17px, 2vw, 20px); color: var(--text-secondary); max-width: 900px; margin: 0 auto 32px; line-height: 1.7; }
+
+    .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 32px; border-radius: 12px; font-weight: 700; font-size: 16px;
+      text-decoration: none; cursor: pointer; border: none; transition: all 0.3s; white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: var(--bg-dark); box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4); }
+    .btn-secondary { background: transparent; color: var(--text-primary); border: 2px solid var(--card-border); }
+    .btn-secondary:hover { border-color: var(--accent-blue); background: rgba(96, 165, 250, 0.05); }
+    .btn-disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+
+    .section { padding: 60px 0; }
+    h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 48px; text-align: center; font-weight: 800; letter-spacing: -0.5px; }
+
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 40px; }
+    .card {
+      background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 32px;
+      display: flex; flex-direction: column; gap: 16px; transition: all 0.3s; height: 100%; position: relative; overflow: hidden;
+    }
+    .card:hover { background: var(--card-hover); border-color: rgba(96, 165, 250, 0.3); transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); }
+
+    .card.featured { border-color: var(--accent-purple); box-shadow: 0 0 0 1px var(--accent-purple), 0 12px 32px rgba(167, 139, 250, 0.18); }
+    .card-flag {
+      position: absolute; top: 0; left: 0;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: #fff; font-size: 12px; font-weight: 800; letter-spacing: 0.6px;
+      padding: 6px 16px; border-bottom-right-radius: 12px; text-transform: uppercase;
+    }
+    .price-tag { display: flex; align-items: baseline; gap: 10px; margin: 4px 0 4px; flex-wrap: wrap; }
+    .price-tag .amount { font-size: 30px; font-weight: 800; color: var(--text-primary); }
+    .price-tag .note { font-size: 14px; color: var(--text-muted); }
+
+    .capture {
+      background: linear-gradient(135deg, rgba(18,58,138,0.35), rgba(167,139,250,0.18));
+      border: 1px solid rgba(167,139,250,0.3); border-radius: 20px; padding: 40px; text-align: center; margin-top: 8px;
+    }
+    .capture h3 { font-size: 26px; margin-bottom: 10px; }
+    .capture p { color: var(--text-secondary); max-width: 560px; margin: 0 auto 24px; }
+    .capture-form { display: flex; gap: 12px; max-width: 520px; margin: 0 auto; flex-wrap: wrap; }
+    .capture-form input {
+      flex: 1; min-width: 220px; padding: 16px 18px; border-radius: 12px;
+      border: 1px solid var(--card-border); background: rgba(255,255,255,0.06);
+      color: var(--text-primary); font-size: 16px; font-family: inherit;
+    }
+    .capture-form input::placeholder { color: var(--text-muted); }
+    .capture-form input:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+    .capture small { display: block; color: var(--text-muted); font-size: 13px; margin-top: 14px; }
+
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .testi { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 28px; }
+    .testi p { color: var(--text-secondary); font-size: 16px; line-height: 1.7; font-style: italic; }
+    .testi .who { margin-top: 16px; font-weight: 700; color: var(--text-primary); font-style: normal; font-size: 15px; }
+    .testi .role { color: var(--text-muted); font-size: 13px; font-style: normal; }
+
+    .coming-soon-ribbon {
+      position: absolute; top: 35px; right: -35px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444); color: white;
+      padding: 8px 50px; transform: rotate(45deg); font-weight: 700; font-size: 13px;
+      letter-spacing: 0.5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); z-index: 10;
+    }
+    .card h3 { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .card p { color: var(--text-secondary); font-size: 16px; line-height: 1.6; flex-grow: 1; }
+    .card ul { list-style: none; padding: 0; margin: 16px 0; display: flex; flex-direction: column; gap: 12px; }
+    .card ul li { color: var(--text-secondary); font-size: 15px; padding-left: 28px; position: relative; }
+    .card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; font-size: 18px; }
+    .card-actions { display: flex; gap: 12px; margin-top: auto; padding-top: 16px; }
+    .card-actions .btn { flex: 1; justify-content: center; padding: 14px 24px; font-size: 15px; }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .proof-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 28px; text-align: center; }
+    .proof-card h3 { font-size: 20px; margin-bottom: 12px; color: var(--accent-blue); }
+    .proof-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .faq-item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 28px; }
+    .faq-item h3 { font-size: 18px; margin-bottom: 12px; color: var(--text-primary); }
+    .faq-item p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+
+    footer { padding: 60px 0; text-align: center; color: var(--text-muted); font-size: 15px; border-top: 1px solid var(--card-border); margin-top: 80px; }
+    footer a { color: var(--accent-blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: flex; }
+      .nav { padding: 12px 0; }
+      .brand { font-size: 18px; }
+      .nav-links {
+        position: fixed; top: 57px; left: 0; right: 0;
+        background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(12px);
+        flex-direction: column; gap: 0; padding: 0; max-height: 0; overflow: hidden;
+        transition: max-height 0.3s ease; border-bottom: 1px solid var(--card-border);
+      }
+      .nav-links.active { max-height: 300px; }
+      .nav-links a { width: 100%; padding: 16px 20px; border-bottom: 1px solid var(--card-border); font-size: 15px; }
+      .nav-links a:last-child { border-bottom: none; }
+      .nav-links .btn { margin: 12px 20px; width: calc(100% - 40px); justify-content: center; border: 2px solid var(--card-border); }
+      .hero { padding: 40px 0 30px; }
+      .badge { font-size: 12px; padding: 8px 16px; }
+      h1 { font-size: 32px; margin-bottom: 20px; }
+      .lead { font-size: 16px; margin-bottom: 24px; }
+      .btn-group { flex-direction: column; gap: 12px; }
+      .btn { width: 100%; justify-content: center; }
+      .section { padding: 40px 0; }
+      h2 { font-size: 28px; margin-bottom: 32px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .card-actions { flex-direction: column; }
+      .proof-grid, .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .card { padding: 24px 20px; }
+      .coming-soon-ribbon { font-size: 11px; padding: 6px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">👑 Cloud Mastery</div>
+
+        <div class="mobile-menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#products">Products</a>
+          <a href="#proof">Credibility</a>
+          <a href="#faq">FAQ</a>
+          <a href="/br/">🇧🇷 PT</a>
+          <a class="btn btn-secondary" style="padding: 12px 24px; font-size: 14px;" href="mailto:contato@alessandrofalanque.com">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      const nav = document.querySelector('.nav');
+      const navLinks = document.getElementById('navLinks');
+      if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">
+          🎯 Limited mentoring spots this month
+        </div>
+
+        <h1>
+          Land your role in <span class="gradient-text">Cloud, Data & AI</span><br>with someone who's hired and coached dozens
+        </h1>
+
+        <p class="lead">
+          One-on-one career mentoring to take you from scattered knowledge to your next role: a portfolio
+          that proves your value, a LinkedIn that attracts recruiters, and interviews you own. A method applied
+          on real-world projects (AWS, Google, Accenture, DNX).
+        </p>
+
+        <div class="btn-group">
+          <!-- TODO: replace with your real Calendly/Cal.com link -->
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Book a free chat (30 min)</a>
+          <a class="btn btn-secondary" href="#products">See how it works</a>
+        </div>
+        <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px;">
+          No obligation · find out if the mentoring is right for where you are now
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <h2>Choose your next step</h2>
+
+        <div class="cards-grid">
+          <!-- Card 1: Mentoring (PRIMARY) -->
+          <article class="card featured">
+            <div class="card-flag">⭐ Most popular</div>
+            <h3 style="margin-top: 20px;">💼 1:1 Career Mentoring</h3>
+            <p>
+              Individual guidance with me to shape your strategy, sharpen your portfolio and position you
+              for your next role in Cloud / Data & AI — right here in the Australian market and beyond.
+            </p>
+            <div class="price-tag">
+              <span class="amount">AUD 1,500</span>
+              <span class="note">upfront · or 2× AUD 850</span>
+            </div>
+            <ul>
+              <li>6 personalised 1:1 sessions</li>
+              <li>Magnetic LinkedIn + portfolio review</li>
+              <li>Mock interviews with structured feedback</li>
+              <li>90-day plan with accountability</li>
+            </ul>
+            <div class="card-actions">
+              <!-- TODO: replace with your real Calendly/Cal.com link -->
+              <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Book a chat</a>
+              <a class="btn btn-secondary" href="/au/mentoria.html">See details</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Book -->
+          <article class="card">
+            <h3>📚 Book: Cloud Mastery</h3>
+            <p>
+              From zero to Cloud Engineer in 90 days. Real-world practice with VPC, IAM, EC2/Lambda,
+              S3/RDS and a complete portfolio project. Everything you need to land the job.
+            </p>
+            <ul>
+              <li>Frameworks the market actually uses</li>
+              <li>Validated production checklists</li>
+              <li>15 hands-on portfolio projects</li>
+              <li>Bonus: templates and mini-mentoring</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="/Livro001.html">Buy Now</a>
+              <a class="btn btn-secondary" href="Livro001.html#sumario">See Contents</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Workshop -->
+          <article class="card">
+            <div class="coming-soon-ribbon">COMING SOON</div>
+            <h3>🚀 GenAI on AWS Workshop</h3>
+            <p>
+              An intensive weekend to ship your first GenAI API with Lambda + API Gateway + Bedrock.
+              From zero to deploy with production-grade architecture.
+            </p>
+            <ul>
+              <li>Minimal production architecture</li>
+              <li>Observability and cost control</li>
+              <li>Guided deploy with templates</li>
+              <li>Certificate of completion</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary btn-disabled">Enrol</a>
+              <a class="btn btn-secondary btn-disabled">See Program</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lead-magnet">
+      <div class="container">
+        <div class="capture">
+          <h3>📩 Get the first chapter of the book free</h3>
+          <p>
+            Drop your best email and get the opening chapter of <b>Cloud Mastery</b> straight away —
+            plus practical Cloud career tips in your inbox.
+          </p>
+          <!-- Active lead capture form (Formspree form AU: xgogjeoy).
+               Captured emails land in your inbox and the Formspree dashboard. -->
+          <form class="capture-form" action="https://formspree.io/f/xgogjeoy" method="POST">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="you@email.com" required />
+            <input type="hidden" name="_subject" value="New lead — first chapter (AU)" />
+            <input type="hidden" name="market" value="Australia" />
+            <button type="submit" class="btn btn-primary">Send me the chapter</button>
+          </form>
+          <small>No spam. Unsubscribe anytime.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials" style="background: rgba(0, 0, 0, 0.2);">
+      <div class="container">
+        <h2>From people I've mentored</h2>
+        <div class="testi-grid">
+          <!-- TODO: replace with your REAL mentee testimonial (ask for a sentence + name + role/where they were hired) -->
+          <div class="testi">
+            <p>"Within weeks my LinkedIn started attracting recruiters and I finally knew what to put in
+            my portfolio. It made all the difference in my move into data."</p>
+            <div class="who">— [Mentee name]</div>
+            <div class="role">Transition into Data Engineering</div>
+          </div>
+          <div class="testi">
+            <p>"The one-on-one guidance and the 90-day plan gave me clarity and direction. I stopped
+            studying in the dark and started acting with a strategy."</p>
+            <div class="who">— [Name]</div>
+            <div class="role">[Role / company]</div>
+          </div>
+        </div>
+        <p style="text-align:center; color: var(--text-muted); font-size: 14px; margin-top: 20px;">
+          <!-- Add more as you get results — mentee social proof converts better than any bio. -->
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="proof" style="background: rgba(0, 0, 0, 0.2);">
+      <div class="container">
+        <h2>Credibility & Results</h2>
+
+        <div class="proof-grid">
+          <div class="proof-card">
+            <h3>🎯 Track record</h3>
+            <p>
+              AWS Cape Town, Google Partner (SA/Manager), Accenture (Sr. Manager, 4.5 years),
+              Head of Data Strategy in Sydney. International experience in Cloud.
+            </p>
+          </div>
+
+          <div class="proof-card">
+            <h3>📊 Results</h3>
+            <p>
+              A team of 60+ professionals built, enterprise multi-cloud migrations, award-winning
+              automation and consolidated enterprise clients.
+            </p>
+          </div>
+
+          <div class="proof-card">
+            <h3>🚀 Content</h3>
+            <p>
+              A practical book, hands-on workshops, applicable frameworks and materials
+              tested in production. No fluff, 100% actionable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>❓ Do I need prior experience?</h3>
+            <p>
+              No! Each offering has a track for beginners as well as acceleration for
+              experienced professionals looking to level up.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>💳 Can I pay in instalments?</h3>
+            <p>
+              Yes! The mentoring can be paid upfront or in 2 instalments via a secure
+              payment platform (credit card or PayPal).
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>✅ Is there a guarantee?</h3>
+            <p>
+              7-day unconditional guarantee on the book and workshop.
+              Mentoring follows a specific agreement with detailed terms.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>💬 Is there support?</h3>
+            <p>
+              Mentoring includes an exclusive community and 1:1 sessions.
+              The workshop includes technical support for 30 days after completion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="closing">
+      <div class="container">
+        <div class="capture" style="background: linear-gradient(135deg, var(--accent-blue), rgba(167,139,250,0.25));">
+          <h3>Ready to unlock your Cloud career?</h3>
+          <p>Book a free 30-minute chat. No obligation — just an honest read on where you are and the shortest path to your next role.</p>
+          <!-- TODO: replace with your real Calendly/Cal.com link -->
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener" style="padding: 16px 40px;">Book my chat</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2025 Alessandro Falanque • Cloud Mastery<br>
+        <a href="mailto:contato@alessandrofalanque.com">contato@alessandrofalanque.com</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
