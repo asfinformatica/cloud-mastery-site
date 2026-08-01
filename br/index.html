@@ -285,6 +285,15 @@
     .price-tag .amount { font-size: 30px; font-weight: 800; color: var(--text-primary); }
     .price-tag .note { font-size: 14px; color: var(--text-muted); }
 
+    .book-cover {
+      display: block;
+      width: 160px;
+      max-width: 62%;
+      margin: 4px auto 8px;
+      border-radius: 8px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+    }
+
     /* Lead capture */
     .capture {
       background: linear-gradient(135deg, rgba(18,58,138,0.35), rgba(167,139,250,0.18));
@@ -705,28 +714,30 @@
 
           <!-- Card 2: Livro -->
           <article class="card">
-            <h3>📚 Livro: Cloud Mastery</h3>
+            <h3>📚 Livro: AWS Cloud Engineer</h3>
+            <img class="book-cover" src="/livro-capa.png" alt="Capa do livro Rumo ao Sucesso — AWS Cloud Engineer, de Alessandro Falanque" />
             <p>
-              Um guia prático de <b>Zero a Cloud Engineer em 90 dias</b>, com ambiente real e um projeto
-              de portfólio completo do começo ao fim. Ideal para quem quer estudar no próprio ritmo
-              antes (ou junto) da mentoria.
+              <b>Rumo ao Sucesso</b> — o guia completo para <b>iniciar sua carreira como AWS Cloud
+              Engineer</b>. Dos fundamentos da nuvem às certificações, com a jornada real de quem já
+              formou centenas de profissionais e trabalha do Brasil para o mundo.
             </p>
             <div class="price-tag">
-              <span class="note">📘 E-book + projetos · lançamento em breve</span>
+              <span class="note">📘 E-book · lançamento em breve</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">O que tem dentro</p>
+            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">O que você vai encontrar</p>
             <ul>
-              <li>Passo a passo de VPC, IAM, EC2/Lambda, S3/RDS</li>
-              <li>Frameworks que o mercado realmente usa</li>
-              <li>Checklists de produção validados</li>
-              <li>15 projetos práticos para portfólio</li>
-              <li>Templates prontos + mini-mentoria bônus</li>
+              <li>Minha jornada real — com acertos e erros</li>
+              <li>Frameworks práticos do dia a dia de Cloud Engineers</li>
+              <li>Exercícios hands-on que constroem portfólio de verdade</li>
+              <li>Roteiro de certificações e entrevistas com checklists</li>
+              <li>Planos de 30/60/90 dias para acelerar sua empregabilidade</li>
             </ul>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">Você sai capaz de</p>
+            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">Temas que você domina</p>
             <ul>
-              <li>Provisionar infraestrutura AWS com segurança</li>
-              <li>Entregar um projeto de portfólio de ponta a ponta</li>
-              <li>Falar a língua do mercado nas entrevistas</li>
+              <li>Fundamentos e conceitos de Computação em Nuvem</li>
+              <li>Plataformas de nuvem (AWS, GCP)</li>
+              <li>IA e Generative AI na nuvem</li>
+              <li>Certificações e experiência prática</li>
             </ul>
             <div class="card-actions">
               <a class="btn btn-primary" href="/Livro001.html">Comprar Agora</a>
