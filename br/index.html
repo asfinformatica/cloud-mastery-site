@@ -245,8 +245,9 @@
       gap: 16px;
       transition: all 0.3s;
       position: relative;
-      overflow: hidden;
     }
+    /* Só o card com a faixa "EM BREVE" precisa recortar o excedente */
+    .card.clip { overflow: hidden; }
     
     .card:hover {
       background: var(--card-hover);
@@ -270,6 +271,7 @@
       font-weight: 800;
       letter-spacing: 0.6px;
       padding: 6px 16px;
+      border-top-left-radius: 20px;
       border-bottom-right-radius: 12px;
       text-transform: uppercase;
     }
@@ -733,7 +735,7 @@
           </article>
 
           <!-- Card 3: Workshop -->
-          <article class="card">
+          <article class="card clip">
             <div class="coming-soon-ribbon">EM BREVE</div>
             <h3>🚀 Workshop GenAI na AWS</h3>
             <p>
