@@ -49,7 +49,16 @@
     .muted{color:var(--muted)}
     .faq details{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin:10px 0}
     footer{padding:48px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
-    @media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero h1{font-size:40px}}
+    .truths{grid-template-columns:repeat(2,1fr)}
+    .truth{position:relative;padding-left:0}
+    .truth .mark{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8ab4ff;margin-bottom:10px}
+    .truth h3{font-size:22px;line-height:1.25;margin:0 0 10px}
+    .truth h3 .hl{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .truth p{color:var(--muted);line-height:1.65;margin:0}
+    .section-intro{max-width:760px;margin:0 0 8px}
+    .section-intro h2{font-size:34px;margin:0 0 10px}
+    .section-intro p{color:var(--muted);font-size:19px;line-height:1.6}
+    @media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.truths{grid-template-columns:1fr}.hero h1{font-size:40px}}
   </style>
 </head>
 <body>
@@ -58,6 +67,7 @@
     <nav>
       <a href="/au/" style="font-weight:800;color:#fff;text-decoration:none">Cloud Mastery</a>
       <div class="nav">
+        <a href="#the-path">The path</a>
         <a href="#program">Program</a>
         <a href="#investment">Investment</a>
         <a href="#faq">FAQ</a>
@@ -81,6 +91,40 @@
       <div class="kpi">✅ 60+ professionals coached</div>
       <div class="kpi">🏆 Experience at AWS, Google, Accenture</div>
       <div class="kpi">🌍 Strategy for the international market</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="the-path">
+  <div class="container">
+    <div class="section-intro">
+      <h2>What no one tells you about landing the role</h2>
+      <p>After years building an international career, I learned the path is different from what they teach you. These are the truths that change the game — and that become strategy in the mentoring:</p>
+    </div>
+    <div class="grid truths" style="margin-top:28px">
+      <div class="card truth">
+        <span class="mark">Truth 01</span>
+        <h3>Certifications don't get you hired. <span class="hl">Your portfolio does.</span></h3>
+        <p>Recruiters want to see what you've built — a real cloud architecture, a pipeline that works. A cert opens a conversation; the portfolio closes the role. Most people get the order backwards and stall.</p>
+      </div>
+      <div class="card truth">
+        <span class="mark">Truth 02</span>
+        <h3>Technical English beats <span class="hl">perfect English.</span></h3>
+        <p>You don't need a flawless accent. You need to defend an architecture decision and tell the impact of your work in English. Plenty of strong people sabotage themselves waiting to feel "fluent enough".</p>
+      </div>
+      <div class="card truth">
+        <span class="mark">Truth 03</span>
+        <h3>Applying to open roles is the <span class="hl">slowest path.</span></h3>
+        <p>The best opportunities come through network, referrals and a LinkedIn that pulls the recruiter to you — not from mass-sending resumes into the void. It's positioning, not luck.</p>
+      </div>
+      <div class="card truth">
+        <span class="mark">Truth 04</span>
+        <h3>Your LinkedIn is your <span class="hl">real resume.</span></h3>
+        <p>Recruiters find you before they ever see a PDF. If your profile doesn't tell a clear story of value, you're invisible — no matter how good you are. This is where most people lose the role without knowing it.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px">
+      <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Get the full map — book a chat</a>
     </div>
   </div>
 </section>
