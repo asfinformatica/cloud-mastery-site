@@ -379,7 +379,12 @@
             <h3 style="font-size:24px;margin:0 0 6px;">Tech Leadership Mentoring</h3>
             <p style="color:var(--text-secondary);font-size:15px;margin:0;max-width:560px;">From Engineer to <b>Head</b>: technical leadership, executive presence and the jump into management roles in Cloud, Data & AI — with someone who's an IT Executive.</p>
           </div>
-          <a class="btn btn-secondary" href="mailto:contato@alessandrofalanque.com?subject=Interest%20in%20Tech%20Leadership%20Mentoring" style="white-space:nowrap;">Notify me when it opens</a>
+          <form action="https://formspree.io/f/xgogjeoy" method="POST" data-thanks="✅ Great! We'll let you know when the Tech Leadership Mentoring opens." style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+            <input type="email" name="email" placeholder="you@email.com" required style="min-width:200px;padding:14px 16px;border-radius:12px;border:1px solid var(--card-border);background:rgba(255,255,255,0.06);color:var(--text-primary);font-size:15px;font-family:inherit;" />
+            <input type="hidden" name="_subject" value="Interest — Tech Leadership Mentoring (AU)" />
+            <input type="hidden" name="interest" value="Tech Leadership Mentoring" />
+            <button type="submit" class="btn btn-secondary" style="white-space:nowrap;">Notify me when it opens</button>
+          </form>
         </div>
       </div>
     </section>
@@ -394,7 +399,7 @@
           </p>
           <!-- Active lead capture form (Formspree form AU: xgogjeoy).
                Captured emails land in your inbox and the Formspree dashboard. -->
-          <form class="capture-form" action="https://formspree.io/f/xgogjeoy" method="POST">
+          <form class="capture-form" action="https://formspree.io/f/xgogjeoy" method="POST" data-next="/au/obrigado.html">
             <input type="hidden" name="_next" value="https://alessandrofalanque.com/au/obrigado.html" />
             <input type="text" name="name" placeholder="Your name" required />
             <input type="email" name="email" placeholder="you@email.com" required />
@@ -527,17 +532,20 @@
 <script>
   // Envio AJAX do formulário (funciona no plano grátis do Formspree) + redireciona para a página de download
   (function(){
-    var REDIRECT = "/au/obrigado.html";
     document.querySelectorAll('form[action*="formspree.io"]').forEach(function(form){
       form.addEventListener("submit", function(e){
         e.preventDefault();
         var btn = form.querySelector('button[type="submit"]');
         var original = btn ? btn.textContent : "";
-        if(btn){ btn.disabled = true; btn.textContent = "Enviando..."; }
+        if(btn){ btn.disabled = true; btn.textContent = "Sending..."; }
         fetch(form.action, { method:"POST", body:new FormData(form), headers:{ "Accept":"application/json" } })
           .then(function(r){
-            if(r.ok){ window.location.href = REDIRECT; }
-            else {
+            if(r.ok){
+              var next = form.getAttribute("data-next");
+              if(next){ window.location.href = next; return; }
+              var msg = form.getAttribute("data-thanks") || "✅ Done! We'll keep you posted.";
+              form.innerHTML = '<div style="font-weight:700;color:#fff;font-size:16px;padding:6px 0;">' + msg + '</div>';
+            } else {
               r.json().then(function(d){
                 alert((d && d.errors && d.errors[0] && d.errors[0].message) || "Erro ao enviar. Tente novamente.");
                 if(btn){ btn.disabled = false; btn.textContent = original; }
