@@ -201,12 +201,17 @@
 /* leitura: corpo de texto maior */
 .lead{font-size:clamp(19px,2.1vw,22px)}.card p{font-size:18px}.card ul li{font-size:17px}.proof-card p{font-size:17px}.faq-item p{font-size:17px}.testi p{font-size:18px}.capture p{font-size:18px}
 </style>
+  <!-- Identidade visual compartilhada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/theme.css" />
 </head>
 <body>
   <header>
     <div class="container">
       <nav class="nav">
-        <div class="brand">Alessandro Falanque</div>
+        <div class="brand">Alessandro Falanque <span class="brand-tag">Cloud · Data · AI</span></div>
 
         <div class="mobile-menu-toggle" onclick="toggleMenu()">
           <span></span>
@@ -244,11 +249,25 @@
     });
   </script>
 
+  <div class="topbar">Limited mentoring spots this month · first 30-minute call is free</div>
+
+  <section class="spec-strip">
+    <div class="container">
+      <dl class="spec-grid">
+        <div class="spec"><dt>Format</dt><dd>Live 1:1 mentoring</dd></div>
+        <div class="spec"><dt>Length</dt><dd>6 weeks · 6 sessions</dd></div>
+        <div class="spec"><dt>Focus</dt><dd>Cloud · Data · AI</dd></div>
+        <div class="spec"><dt>Where</dt><dd>Online (Zoom) · recorded</dd></div>
+        <div class="spec is-green"><dt>Investment</dt><dd>AUD 1,500 upfront</dd></div>
+      </dl>
+    </div>
+  </section>
+
   <main>
     <section class="hero">
       <div class="container">
         <div class="badge">
-          🎯 Limited mentoring spots this month
+          Career mentoring in Cloud, Data & AI
         </div>
 
         <h1>
@@ -260,6 +279,13 @@
           that proves your value, a LinkedIn that attracts recruiters, and interviews you own. A method applied
           on real-world projects (AWS, Google, Accenture).
         </p>
+
+        <ul class="hero-checks">
+          <li>6 live 1:1 sessions, with recordings</li>
+          <li>Portfolio and LinkedIn reviewed by me</li>
+          <li>Mock interviews with structured feedback</li>
+          <li>A 90-day plan to your next role</li>
+        </ul>
 
         <div class="btn-group">
           <!-- TODO: replace with your real Calendly/Cal.com link -->
@@ -274,6 +300,7 @@
 
     <section class="section" id="products">
       <div class="container">
+        <span class="eyebrow" style="text-align:center;">Products</span>
         <h2>Choose your next step</h2>
 
         <div class="cards-grid">
@@ -291,7 +318,7 @@
               <span class="amount">AUD 1,500</span>
               <span class="note">upfront · or 2× AUD 850</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">How it works</p>
+            <p class="eyebrow" style="margin:10px 0 0;">How it works</p>
             <ul>
               <li>6 live 1:1 sessions (Zoom) over 6 weeks · with recordings</li>
               <li>Initial diagnosis + tailored career plan</li>
@@ -319,7 +346,7 @@
             <div class="price-tag">
               <span class="note">📘 E-book (in Portuguese) · 🇬🇧 English edition coming soon</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">What you'll find</p>
+            <p class="eyebrow" style="margin:10px 0 0;">What you'll find</p>
             <ul>
               <li>My real journey — the wins and the mistakes</li>
               <li>Practical frameworks from a Cloud Engineer's day to day</li>
@@ -327,7 +354,7 @@
               <li>Certification & interview roadmap with checklists</li>
               <li>30/60/90-day plans to speed up your employability</li>
             </ul>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">Topics you'll master</p>
+            <p class="eyebrow" style="margin:10px 0 0;">Topics you'll master</p>
             <ul>
               <li>Cloud computing fundamentals and core concepts</li>
               <li>Cloud platforms (AWS, GCP)</li>
@@ -352,7 +379,7 @@
             <div class="price-tag">
               <span class="note">🗓️ Weekend · live · coming soon</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">What you walk away with</p>
+            <p class="eyebrow" style="margin:10px 0 0;">What you walk away with</p>
             <ul>
               <li>Your first GenAI API, live</li>
               <li>Minimal production architecture</li>
@@ -360,7 +387,7 @@
               <li>Guided deploy with reusable templates</li>
               <li>Certificate of completion</li>
             </ul>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">You'll be able to</p>
+            <p class="eyebrow" style="margin:10px 0 0;">You'll be able to</p>
             <ul>
               <li>Ship a GenAI API to production</li>
               <li>Control LLM costs on AWS</li>
@@ -377,14 +404,14 @@
 
     <section class="section" id="leadership" style="padding-top:0;">
       <div class="container">
-        <div style="background:linear-gradient(135deg, rgba(18,58,138,0.4), rgba(167,139,250,0.2));border:1px solid rgba(167,139,250,0.3);border-radius:20px;padding:32px 36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+        <div class="panel" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
           <div style="flex:1;min-width:260px;">
-            <div style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-purple);margin-bottom:8px;">👔 Coming soon · For senior professionals</div>
+            <span class="eyebrow">Coming soon · for senior professionals</span>
             <h3 style="font-size:24px;margin:0 0 6px;">Tech Leadership Mentoring</h3>
             <p style="color:var(--text-secondary);font-size:15px;margin:0;max-width:560px;">From Engineer to <b>Head</b>: technical leadership, executive presence and the jump into management roles in Cloud, Data & AI — with someone who's an IT Executive.</p>
           </div>
           <form action="https://formspree.io/f/xgogjeoy" method="POST" data-thanks="✅ Great! We'll let you know when the Tech Leadership Mentoring opens." style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-            <input type="email" name="email" placeholder="you@email.com" required style="min-width:200px;padding:14px 16px;border-radius:12px;border:1px solid var(--card-border);background:rgba(255,255,255,0.06);color:var(--text-primary);font-size:15px;font-family:inherit;" />
+            <input class="af-input" type="email" name="email" placeholder="you@email.com" required style="min-width:200px;" />
             <input type="hidden" name="_subject" value="Interest — Tech Leadership Mentoring (AU)" />
             <input type="hidden" name="interest" value="Tech Leadership Mentoring" />
             <button type="submit" class="btn btn-secondary" style="white-space:nowrap;">Notify me when it opens</button>
@@ -441,8 +468,41 @@
       </div>
     </section>
 
+    <section class="section" id="about">
+      <div class="container">
+        <span class="eyebrow" style="text-align:center;">Who you'll work with</span>
+        <h2>Alessandro Falanque</h2>
+
+        <article class="person">
+          <div class="person-photo" data-initials="AF" role="img" aria-label="Photo of Alessandro Falanque"></div>
+          <div class="person-body">
+            <h3>Alessandro Falanque</h3>
+            <span class="person-role">Head of Data Strategy · Ex-AWS, Google Partner and Accenture</span>
+            <p>
+              I started from scratch and built an international career in Cloud and Data: AWS in Cape Town,
+              Google Partner and Accenture in São Paulo, and today leading data strategy in Sydney. Along
+              the way I've hired and coached dozens of engineers — and that view from the other side of the
+              hiring table is exactly what I bring into the mentoring.
+            </p>
+            <p>
+              No loose theory: you leave with a portfolio, clear positioning and a concrete plan for the
+              next 12 weeks.
+            </p>
+            <div class="person-tags">
+              <span>AWS</span>
+              <span>Google Partner</span>
+              <span>Accenture</span>
+              <span>60+ professionals trained</span>
+              <span>Sydney · Australia</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="proof" style="background: rgba(0, 0, 0, 0.2);">
       <div class="container">
+        <span class="eyebrow" style="text-align:center;">Track record</span>
         <h2>Credibility & Results</h2>
 
         <div class="proof-grid">
@@ -475,6 +535,7 @@
 
     <section class="section" id="faq">
       <div class="container">
+        <span class="eyebrow" style="text-align:center;">Questions</span>
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq-grid">
@@ -515,7 +576,7 @@
 
     <section class="section" id="closing">
       <div class="container">
-        <div class="capture" style="background: linear-gradient(135deg, var(--accent-blue), rgba(167,139,250,0.25));">
+        <div class="capture capture--accent">
           <h3>Ready to unlock your Cloud career?</h3>
           <p>Book a free 30-minute chat. No obligation — just an honest read on where you are and the shortest path to your next role.</p>
           <!-- TODO: replace with your real Calendly/Cal.com link -->
