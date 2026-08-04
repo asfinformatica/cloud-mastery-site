@@ -16,13 +16,16 @@
    1. Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* Superfícies */
-  --af-bg:            #080b12;
-  --af-bg-soft:       #0b111b;
-  --af-surface:       #0e1622;
-  --af-surface-2:     #131d2c;
-  --af-line:          rgba(255, 255, 255, 0.09);
-  --af-line-strong:   rgba(255, 255, 255, 0.18);
+  /* Superfícies
+     Fundo propositalmente acima do quase-preto: o contraste do texto continua
+     alto, mas a página não fica pesada. Cada nível sobe ~1 passo de luminância
+     para que card e fundo se distingam sem precisar de borda forte. */
+  --af-bg:            #0f1520;
+  --af-bg-soft:       #131a27;
+  --af-surface:       #18202e;
+  --af-surface-2:     #1e2736;
+  --af-line:          rgba(255, 255, 255, 0.11);
+  --af-line-strong:   rgba(255, 255, 255, 0.22);
 
   /* Acentos */
   --af-blue:          #2f7cf6;
@@ -34,10 +37,13 @@
   --af-green-line:    rgba(0, 224, 92, 0.38);
   --af-amber:         #f5a524;
 
-  /* Texto */
-  --af-text:          #e9eef6;
-  --af-text-2:        #a7b4c6;
-  --af-muted:         #71809a;
+  /* Texto
+     Branco puro sobre fundo escuro causa halation (o texto "vibra" e cansa a
+     vista), então o corpo para um tom abaixo. Todos os três passam AA sobre
+     --af-bg e sobre --af-surface: 14.6 / 9.8 / 6.3 no fundo. */
+  --af-text:          #dfe6f0;
+  --af-text-2:        #b3bfd0;
+  --af-muted:         #8b99b0;
 
   /* Tipografia */
   --af-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -53,26 +59,26 @@
   --af-grid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M64 0H0v64' fill='none' stroke='%23ffffff' stroke-opacity='.035' stroke-width='1'/%3E%3C/svg%3E");
 
   /* --- Remapeamento dos tokens antigos (páginas index BR/AU) --- */
-  --bg-dark:       #080b12;
-  --bg-mid:        #0b111b;
+  --bg-dark:       #0f1520;
+  --bg-mid:        #131a27;
   --accent-blue:   #2f7cf6;
   --accent-purple: #5b9dff;
-  --text-primary:  #e9eef6;
-  --text-secondary:#a7b4c6;
-  --text-muted:    #71809a;
-  --card-bg:       #0e1622;
-  --card-border:   rgba(255, 255, 255, 0.09);
-  --card-hover:    #131d2c;
+  --text-primary:  #dfe6f0;
+  --text-secondary:#b3bfd0;
+  --text-muted:    #8b99b0;
+  --card-bg:       #18202e;
+  --card-border:   rgba(255, 255, 255, 0.11);
+  --card-hover:    #1e2736;
 
   /* --- Remapeamento dos tokens antigos (livro / mentoria / workshop / obrigado) --- */
-  --bg1: #080b12;
-  --bg2: #0b111b;
-  --bg3: #0e1622;
-  --text:   #e9eef6;
-  --muted:  #a7b4c6;
+  --bg1: #0f1520;
+  --bg2: #131a27;
+  --bg3: #18202e;
+  --text:   #dfe6f0;
+  --muted:  #b3bfd0;
   --accent: #5b9dff;
   --primary:#2f7cf6;
-  --glass:  #0e1622;
+  --glass:  #18202e;
   --radius: 10px;
   --shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
 }
@@ -150,7 +156,7 @@ h3 { letter-spacing: -0.01em; }
   inset: -1px 0 0;
   z-index: -1;
   background-image:
-    linear-gradient(180deg, rgba(8, 11, 18, 0.82) 0%, rgba(8, 11, 18, 0.9) 55%, var(--af-bg) 100%),
+    linear-gradient(180deg, rgba(15, 21, 32, 0.76) 0%, rgba(15, 21, 32, 0.86) 55%, var(--af-bg) 100%),
     url('/assets/hero-bg.jpg'),
     radial-gradient(760px 420px at 22% 20%, rgba(47, 124, 246, 0.22), transparent 65%),
     radial-gradient(600px 360px at 82% 70%, rgba(0, 224, 92, 0.10), transparent 65%),
@@ -210,7 +216,7 @@ main .hero .lead { max-width: 780px; }
    4. Header / navegação
    -------------------------------------------------------------------------- */
 header {
-  background: rgba(8, 11, 18, 0.88);
+  background: rgba(15, 21, 32, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--af-line);
   box-shadow: none;
@@ -317,14 +323,17 @@ header {
   transform: translateY(-2px);
 }
 
-/* Variante azul (usada no header) */
+/* Variante azul (usada no header)
+   --af-blue com texto branco só passa em 3.94:1 (abaixo do AA 4.5:1 exigido
+   para texto pequeno). Um tom mais escuro do mesmo azul resolve sem mudar a
+   identidade — 6.74:1 em repouso, 5.59:1 no hover. */
 .btn-blue,
 header .btn,
 header .btn-primary,
 header .btn-secondary {
-  background: var(--af-blue);
+  background: #1653c9;
   color: #fff;
-  border: 1px solid var(--af-blue);
+  border: 1px solid #1653c9;
   box-shadow: none;
   padding: 12px 20px;
   font-size: 12px;
@@ -333,8 +342,8 @@ header .btn-secondary {
 header .btn:hover,
 header .btn-primary:hover,
 header .btn-secondary:hover {
-  background: #4a8dfa;
-  border-color: #4a8dfa;
+  background: #1a5fe0;
+  border-color: #1a5fe0;
   transform: translateY(-1px);
 }
 
@@ -374,7 +383,8 @@ header .btn-secondary:hover {
 }
 
 .card-flag {
-  background: var(--af-blue);
+  /* mesmo problema e mesma correção do botão azul do header: ver nota acima */
+  background: #1653c9;
   color: #fff;
   font-family: var(--af-mono);
   font-size: 11px;
@@ -558,7 +568,7 @@ header .btn-secondary:hover {
 }
 .capture--accent,
 .cta--accent {
-  background: linear-gradient(180deg, rgba(47, 124, 246, 0.14), rgba(8, 11, 18, 0)) , var(--af-surface);
+  background: linear-gradient(180deg, rgba(47, 124, 246, 0.14), rgba(15, 21, 32, 0)) , var(--af-surface);
   border-color: rgba(47, 124, 246, 0.4);
 }
 .capture h3,
@@ -619,9 +629,9 @@ input:focus,
 .person-photo {
   position: relative;
   min-height: 340px;
-  background-color: #0a0f18;
+  background-color: #131a27;
   background-image:
-    linear-gradient(180deg, rgba(8, 11, 18, 0.1), rgba(8, 11, 18, 0.55)),
+    linear-gradient(180deg, rgba(15, 21, 32, 0.1), rgba(15, 21, 32, 0.55)),
     url('/assets/alessandro.jpg'),
     var(--af-grid);
   background-size: cover, cover, 32px 32px;
@@ -724,7 +734,12 @@ footer a { color: var(--af-blue-bright); }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: var(--af-r-sm);
+  /* Branco sobre o verde de marca do WhatsApp (#25D366) fica em 1.98:1 —
+     bem abaixo do AA. Texto escuro no mesmo verde chega a 8.61:1 e reaproveita
+     a cor que os botões .btn-primary já usam sobre fundo verde. */
+  color: #04210f;
 }
+.wa-float svg { fill: #04210f; }
 
 /* --------------------------------------------------------------------------
    15. Responsivo
@@ -747,7 +762,7 @@ footer a { color: var(--af-blue-bright); }
 @media (max-width: 768px) {
   .brand-tag { display: none; }
   .nav-links {
-    background: rgba(8, 11, 18, 0.98);
+    background: rgba(15, 21, 32, 0.98);
     border-bottom: 1px solid var(--af-line);
   }
   .btn { font-size: 12px; padding: 15px 20px; }
