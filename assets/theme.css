@@ -1,0 +1,773 @@
+/* ==========================================================================
+   Alessandro Falanque — Design System
+   Identidade visual: dark técnico, tipografia mono nos rótulos,
+   azul para destaque e verde para oferta / confirmação.
+
+   Este arquivo é carregado DEPOIS do <style> de cada página,
+   então ele sobrescreve o visual antigo sem precisar reescrever o HTML.
+
+   Imagens opcionais (basta soltar o arquivo na pasta /assets):
+     /assets/hero-bg.jpg     -> foto de fundo do hero (1920x1080, escura)
+     /assets/alessandro.jpg  -> sua foto (retrato, 800x1000, preferir P&B)
+   Se os arquivos não existirem, o site usa o fundo gráfico gerado em CSS.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Superfícies
+     Fundo propositalmente acima do quase-preto: o contraste do texto continua
+     alto, mas a página não fica pesada. Cada nível sobe ~1 passo de luminância
+     para que card e fundo se distingam sem precisar de borda forte. */
+  --af-bg:            #0f1520;
+  --af-bg-soft:       #131a27;
+  --af-surface:       #18202e;
+  --af-surface-2:     #1e2736;
+  --af-line:          rgba(255, 255, 255, 0.11);
+  --af-line-strong:   rgba(255, 255, 255, 0.22);
+
+  /* Acentos */
+  --af-blue:          #2f7cf6;
+  --af-blue-bright:   #5b9dff;
+  --af-blue-soft:     rgba(47, 124, 246, 0.12);
+  --af-green:         #00e05c;
+  --af-green-bright:  #2bff85;
+  --af-green-soft:    rgba(0, 224, 92, 0.08);
+  --af-green-line:    rgba(0, 224, 92, 0.38);
+  --af-amber:         #f5a524;
+
+  /* Texto
+     Branco puro sobre fundo escuro causa halation (o texto "vibra" e cansa a
+     vista), então o corpo para um tom abaixo. Todos os três passam AA sobre
+     --af-bg e sobre --af-surface: 14.6 / 9.8 / 6.3 no fundo. */
+  --af-text:          #dfe6f0;
+  --af-text-2:        #b3bfd0;
+  --af-muted:         #8b99b0;
+
+  /* Tipografia */
+  --af-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --af-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --af-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Forma */
+  --af-r:      10px;
+  --af-r-sm:   6px;
+  --af-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+
+  /* Malha técnica usada nos fundos */
+  --af-grid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M64 0H0v64' fill='none' stroke='%23ffffff' stroke-opacity='.035' stroke-width='1'/%3E%3C/svg%3E");
+
+  /* --- Remapeamento dos tokens antigos (páginas index BR/AU) --- */
+  --bg-dark:       #0f1520;
+  --bg-mid:        #131a27;
+  --accent-blue:   #2f7cf6;
+  --accent-purple: #5b9dff;
+  --text-primary:  #dfe6f0;
+  --text-secondary:#b3bfd0;
+  --text-muted:    #8b99b0;
+  --card-bg:       #18202e;
+  --card-border:   rgba(255, 255, 255, 0.11);
+  --card-hover:    #1e2736;
+
+  /* --- Remapeamento dos tokens antigos (livro / mentoria / workshop / obrigado) --- */
+  --bg1: #0f1520;
+  --bg2: #131a27;
+  --bg3: #18202e;
+  --text:   #dfe6f0;
+  --muted:  #b3bfd0;
+  --accent: #5b9dff;
+  --primary:#2f7cf6;
+  --glass:  #18202e;
+  --radius: 10px;
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--af-body);
+  color: var(--af-text);
+  background-color: var(--af-bg);
+  background-image:
+    radial-gradient(1100px 560px at 50% -12%, rgba(47, 124, 246, 0.16), transparent 62%),
+    radial-gradient(900px 480px at 92% 6%, rgba(0, 224, 92, 0.05), transparent 60%),
+    var(--af-grid);
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-attachment: scroll, scroll, fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .brand, .price-tag .amount, .price {
+  font-family: var(--af-display);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+h1 { line-height: 1.06; }
+h2 { line-height: 1.12; }
+h3 { letter-spacing: -0.01em; }
+
+/* Destaque azul no lugar do antigo gradiente roxo */
+.gradient-text,
+.grad,
+.hl {
+  background: none !important;
+  background-image: none !important;
+  color: var(--af-blue-bright) !important;
+  -webkit-text-fill-color: var(--af-blue-bright);
+}
+.grad-green {
+  color: var(--af-green) !important;
+  -webkit-text-fill-color: var(--af-green);
+}
+
+/* Rótulo mono estilo "// SEÇÃO" */
+.eyebrow {
+  display: block;
+  font-family: var(--af-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--af-blue-bright);
+  margin-bottom: 14px;
+}
+.eyebrow.is-green { color: var(--af-green); }
+.eyebrow::before { content: "// "; opacity: 0.65; }
+
+.mono {
+  font-family: var(--af-mono);
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   3. Faixa hero com imagem de fundo
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -1px 0 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(180deg, rgba(15, 21, 32, 0.76) 0%, rgba(15, 21, 32, 0.86) 55%, var(--af-bg) 100%),
+    url('/assets/hero-bg.jpg'),
+    radial-gradient(760px 420px at 22% 20%, rgba(47, 124, 246, 0.22), transparent 65%),
+    radial-gradient(600px 360px at 82% 70%, rgba(0, 224, 92, 0.10), transparent 65%),
+    var(--af-grid);
+  background-size: cover, cover, auto, auto, 64px 64px;
+  background-position: center, center, center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  border-bottom: 1px solid var(--af-line);
+}
+
+/* Hero centralizado (home BR/AU): limita a largura do título */
+main .hero h1 {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(34px, 4.4vw, 58px);
+}
+main .hero .lead { max-width: 780px; }
+
+/* Lista de fatos do hero, com check verde */
+.hero-checks {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 32px;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.hero-checks li {
+  position: relative;
+  padding-left: 34px;
+  color: var(--af-text-2);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.hero-checks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(0, 224, 92, 0.55);
+  border-radius: 50%;
+  color: var(--af-green);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header / navegação
+   -------------------------------------------------------------------------- */
+header {
+  background: rgba(15, 21, 32, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--af-line);
+  box-shadow: none;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* "| CLOUD · DATA · AI" ao lado do nome */
+.brand-tag {
+  font-family: var(--af-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--af-blue-bright);
+  padding-left: 12px;
+  margin-left: 2px;
+  border-left: 1px solid var(--af-line-strong);
+}
+
+.nav-links a,
+.nav a {
+  font-family: var(--af-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--af-text-2);
+}
+.nav-links a:hover,
+.nav a:hover { color: var(--af-blue-bright); }
+
+.nav-links a.btn,
+.nav a.btn { text-transform: uppercase; }
+
+/* --------------------------------------------------------------------------
+   5. Badge
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--af-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--af-blue-bright);
+  background: rgba(47, 124, 246, 0.06);
+  border: 1px solid rgba(47, 124, 246, 0.4);
+  border-radius: var(--af-r-sm);
+  padding: 11px 18px;
+}
+.badge.is-green {
+  color: var(--af-green);
+  background: var(--af-green-soft);
+  border-color: var(--af-green-line);
+}
+
+/* --------------------------------------------------------------------------
+   6. Botões
+   -------------------------------------------------------------------------- */
+.btn {
+  font-family: var(--af-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: var(--af-r-sm);
+  padding: 16px 26px;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Ação principal = verde (como no modelo) */
+.btn-primary {
+  background: var(--af-green);
+  color: #04210f;
+  border: 1px solid var(--af-green);
+  box-shadow: 0 10px 28px rgba(0, 224, 92, 0.16);
+}
+.btn-primary:hover {
+  background: var(--af-green-bright);
+  border-color: var(--af-green-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 224, 92, 0.24);
+}
+
+/* Ação secundária = contorno */
+.btn-secondary,
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--af-text);
+  border: 1px solid var(--af-line-strong);
+}
+.btn-secondary:hover,
+.btn-ghost:hover {
+  background: rgba(47, 124, 246, 0.08);
+  border-color: var(--af-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Variante azul (usada no header)
+   --af-blue com texto branco só passa em 3.94:1 (abaixo do AA 4.5:1 exigido
+   para texto pequeno). Um tom mais escuro do mesmo azul resolve sem mudar a
+   identidade — 6.74:1 em repouso, 5.59:1 no hover. */
+.btn-blue,
+header .btn,
+header .btn-primary,
+header .btn-secondary {
+  background: #1653c9;
+  color: #fff;
+  border: 1px solid #1653c9;
+  box-shadow: none;
+  padding: 12px 20px;
+  font-size: 12px;
+}
+.btn-blue:hover,
+header .btn:hover,
+header .btn-primary:hover,
+header .btn-secondary:hover {
+  background: #1a5fe0;
+  border-color: #1a5fe0;
+  transform: translateY(-1px);
+}
+
+.btn-disabled,
+.btn-disabled:hover {
+  opacity: 0.4;
+  transform: none;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. Cards
+   -------------------------------------------------------------------------- */
+.card,
+.testi,
+.proof-card,
+.faq-item,
+.faq details {
+  background: var(--af-surface);
+  border: 1px solid var(--af-line);
+  border-radius: var(--af-r);
+  box-shadow: none;
+}
+
+.card:hover {
+  background: var(--af-surface-2);
+  border-color: rgba(47, 124, 246, 0.45);
+  transform: translateY(-3px);
+  box-shadow: var(--af-shadow);
+}
+
+/* Card em destaque: barra azul à esquerda, como no modelo */
+.card.featured {
+  border-color: rgba(47, 124, 246, 0.5);
+  border-left: 2px solid var(--af-blue);
+  box-shadow: 0 0 0 1px rgba(47, 124, 246, 0.16), var(--af-shadow);
+}
+
+.card-flag {
+  /* mesmo problema e mesma correção do botão azul do header: ver nota acima */
+  background: #1653c9;
+  color: #fff;
+  font-family: var(--af-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 7px 14px;
+  border-top-left-radius: var(--af-r);
+  border-bottom-right-radius: 8px;
+}
+
+.coming-soon-ribbon {
+  background: var(--af-amber);
+  color: #241701;
+  font-family: var(--af-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  box-shadow: none;
+}
+
+.proof-card h3 { color: var(--af-blue-bright); }
+
+/* --------------------------------------------------------------------------
+   8. Listas com check verde
+   -------------------------------------------------------------------------- */
+.card ul li,
+.checks li {
+  padding-left: 34px;
+  color: var(--af-text-2);
+}
+
+.card ul li::before,
+.checks li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(0, 224, 92, 0.55);
+  border-radius: 50%;
+  color: var(--af-green);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.toc li:before { color: var(--af-blue-bright); }
+
+/* --------------------------------------------------------------------------
+   9. Preço / oferta
+   -------------------------------------------------------------------------- */
+.price-tag {
+  display: block;
+  border: 1px solid var(--af-green-line);
+  background: var(--af-green-soft);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 10px 0;
+}
+.price-tag .amount {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+.price-tag .note {
+  display: block;
+  font-family: var(--af-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--af-text-2);
+  margin-top: 8px;
+}
+.price-tag .note s { color: var(--af-muted); }
+
+.price { color: #fff; }
+.strike {
+  font-family: var(--af-mono);
+  color: var(--af-muted);
+}
+
+/* Bloco de oferta destacado (seção de investimento) */
+.offer-box {
+  border: 1px solid var(--af-green-line);
+  background: var(--af-green-soft);
+  border-radius: var(--af-r);
+  padding: 28px;
+}
+.offer-box .offer-label {
+  font-family: var(--af-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--af-green);
+  display: block;
+  margin-bottom: 10px;
+}
+.offer-box .offer-price {
+  font-family: var(--af-display);
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+.offer-box .offer-old {
+  font-family: var(--af-mono);
+  font-size: 18px;
+  color: var(--af-muted);
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+.offer-box .offer-fine {
+  font-family: var(--af-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--af-text-2);
+  margin-top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Faixa de especificações (grid mono abaixo do header)
+   -------------------------------------------------------------------------- */
+.spec-strip {
+  background: var(--af-bg-soft);
+  border-bottom: 1px solid var(--af-line);
+}
+.spec-strip .spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0;
+}
+.spec-strip .spec {
+  padding: 18px 22px;
+  border-left: 1px solid var(--af-line);
+}
+.spec-strip .spec:first-child { border-left: none; padding-left: 0; }
+.spec-strip .spec dt {
+  font-family: var(--af-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--af-blue-bright);
+  margin-bottom: 6px;
+}
+.spec-strip .spec dd {
+  font-family: var(--af-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--af-text);
+  margin: 0;
+}
+.spec-strip .spec.is-green dt { color: var(--af-green); }
+.spec-strip .spec.is-green dd { color: var(--af-green); font-weight: 700; }
+
+/* Aviso fino no topo */
+.topbar {
+  background: var(--af-bg-soft);
+  border-bottom: 1px solid var(--af-line);
+  text-align: center;
+  padding: 10px 16px;
+  font-family: var(--af-mono);
+  font-size: 12.5px;
+  color: var(--af-green);
+}
+.topbar::before { content: "// "; opacity: 0.7; }
+
+/* --------------------------------------------------------------------------
+   11. Blocos de captura / CTA
+   -------------------------------------------------------------------------- */
+.capture,
+.cta {
+  background: var(--af-surface);
+  border: 1px solid var(--af-line);
+  border-radius: var(--af-r);
+}
+.capture--accent,
+.cta--accent {
+  background: linear-gradient(180deg, rgba(47, 124, 246, 0.14), rgba(15, 21, 32, 0)) , var(--af-surface);
+  border-color: rgba(47, 124, 246, 0.4);
+}
+.capture h3,
+.cta h2 { font-family: var(--af-display); }
+.capture small,
+.cta small {
+  font-family: var(--af-mono);
+  font-size: 12px;
+  color: var(--af-muted);
+}
+
+/* Painel neutro reaproveitado (ex.: aviso de mentoria de liderança) */
+.panel {
+  background: var(--af-surface);
+  border: 1px solid var(--af-line);
+  border-left: 2px solid var(--af-blue);
+  border-radius: var(--af-r);
+  padding: 32px 36px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Formulários
+   -------------------------------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+.capture-form input,
+.form input,
+.af-input {
+  background: #0a0f18;
+  border: 1px solid var(--af-line-strong);
+  border-radius: var(--af-r-sm);
+  color: var(--af-text);
+  font-family: var(--af-mono);
+  font-size: 14px;
+  padding: 15px 16px;
+}
+input::placeholder { color: var(--af-muted); font-family: var(--af-mono); }
+input:focus,
+.capture-form input:focus,
+.form input:focus {
+  outline: none;
+  border-color: var(--af-blue);
+  box-shadow: 0 0 0 3px rgba(47, 124, 246, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   13. Bloco "sobre / foto"
+   -------------------------------------------------------------------------- */
+.person {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--af-surface);
+  border: 1px solid var(--af-line);
+  border-left: 2px solid var(--af-blue);
+  border-radius: var(--af-r);
+  overflow: hidden;
+}
+.person-photo {
+  position: relative;
+  min-height: 340px;
+  background-color: #131a27;
+  background-image:
+    linear-gradient(180deg, rgba(15, 21, 32, 0.1), rgba(15, 21, 32, 0.55)),
+    url('/assets/alessandro.jpg'),
+    var(--af-grid);
+  background-size: cover, cover, 32px 32px;
+  background-position: center top;
+  background-repeat: no-repeat, no-repeat, repeat;
+  filter: grayscale(1) contrast(1.05);
+}
+/* Iniciais aparecem enquanto não houver foto em /assets/alessandro.jpg */
+.person-photo::after {
+  content: attr(data-initials);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--af-display);
+  font-size: 64px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.10);
+  letter-spacing: 0.04em;
+}
+.person-body { padding: 32px 34px; }
+.person-body h3 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  color: #fff;
+}
+.person-role {
+  display: block;
+  font-family: var(--af-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--af-blue-bright);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.person-body p {
+  color: var(--af-text-2);
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+.person-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.person-tags span {
+  font-family: var(--af-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--af-text-2);
+  border: 1px solid var(--af-line);
+  border-radius: var(--af-r-sm);
+  padding: 7px 12px;
+}
+
+/* --------------------------------------------------------------------------
+   13b. Seletor de idioma (página raiz)
+   -------------------------------------------------------------------------- */
+a.choice {
+  background: var(--af-surface);
+  border: 1px solid var(--af-line);
+  border-radius: var(--af-r);
+}
+a.choice:hover {
+  background: var(--af-surface-2);
+  border-color: var(--af-blue);
+}
+a.choice .name {
+  font-family: var(--af-display);
+  font-weight: 700;
+}
+a.choice .sub {
+  font-family: var(--af-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--af-muted);
+}
+
+/* --------------------------------------------------------------------------
+   14. Rodapé e WhatsApp
+   -------------------------------------------------------------------------- */
+footer {
+  background: var(--af-bg-soft);
+  border-top: 1px solid var(--af-line);
+  font-family: var(--af-mono);
+  font-size: 13px;
+  color: var(--af-muted);
+}
+footer a { color: var(--af-blue-bright); }
+
+.wa-float {
+  font-family: var(--af-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--af-r-sm);
+  /* Branco sobre o verde de marca do WhatsApp (#25D366) fica em 1.98:1 —
+     bem abaixo do AA. Texto escuro no mesmo verde chega a 8.61:1 e reaproveita
+     a cor que os botões .btn-primary já usam sobre fundo verde. */
+  color: #04210f;
+}
+.wa-float svg { fill: #04210f; }
+
+/* --------------------------------------------------------------------------
+   15. Responsivo
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .person { grid-template-columns: 1fr; }
+  .person-photo { min-height: 280px; }
+  .spec-strip .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .spec-strip .spec {
+    border-left: none;
+    border-top: 1px solid var(--af-line);
+    padding: 12px 14px 12px 0;
+  }
+  .spec-strip .spec:nth-child(1),
+  .spec-strip .spec:nth-child(2) { border-top: none; }
+  .spec-strip .spec dd { font-size: 13px; }
+  .topbar { font-size: 11.5px; }
+}
+
+@media (max-width: 768px) {
+  .brand-tag { display: none; }
+  .nav-links {
+    background: rgba(15, 21, 32, 0.98);
+    border-bottom: 1px solid var(--af-line);
+  }
+  .btn { font-size: 12px; padding: 15px 20px; }
+  .price-tag .amount { font-size: 28px; }
+  .offer-box .offer-price { font-size: 32px; }
+  .panel { padding: 24px 22px; }
+  .person-body { padding: 26px 22px; }
+}

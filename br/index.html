@@ -609,13 +609,18 @@
 /* leitura: corpo de texto maior */
 .lead{font-size:clamp(19px,2.1vw,22px)}.card p{font-size:18px}.card ul li{font-size:17px}.proof-card p{font-size:17px}.faq-item p{font-size:17px}.testi p{font-size:18px}.capture p{font-size:18px}
 </style>
+  <!-- Identidade visual compartilhada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/theme.css" />
 </head>
 <body>
   <header>
     <div class="container">
       <nav class="nav">
-        <div class="brand">Alessandro Falanque</div>
-        
+        <div class="brand">Alessandro Falanque <span class="brand-tag">Cloud · Data · AI</span></div>
+
         <div class="mobile-menu-toggle" onclick="toggleMenu()">
           <span></span>
           <span></span>
@@ -656,22 +661,42 @@
     });
   </script>
 
+  <div class="topbar">Vagas limitadas de mentoria neste mês · conversa inicial de 30 min sem custo</div>
+
+  <section class="spec-strip">
+    <div class="container">
+      <dl class="spec-grid">
+        <div class="spec"><dt>Formato</dt><dd>Mentoria 1:1 ao vivo</dd></div>
+        <div class="spec"><dt>Duração</dt><dd>6 semanas · 6 sessões</dd></div>
+        <div class="spec"><dt>Foco</dt><dd>Cloud · Data · AI</dd></div>
+        <div class="spec"><dt>Onde</dt><dd>Online (Zoom) · gravado</dd></div>
+        <div class="spec is-green"><dt>Investimento</dt><dd>R$ 4.300 à vista</dd></div>
+      </dl>
+    </div>
+  </section>
+
   <main>
     <section class="hero">
       <div class="container">
         <div class="badge">
-          🎯 Vagas limitadas de mentoria neste mês
+          Mentoria de carreira em Cloud, Data & AI
         </div>
 
         <h1>
-          Conquiste sua vaga em <span class="gradient-text">Cloud, Data & AI</span><br>com quem já contratou e formou dezenas
+          Desenvolva as habilidades mais demandadas em <span class="gradient-text">Cloud, Data & AI</span>
         </h1>
 
         <p class="lead">
-          Mentoria individual de carreira para você sair do conhecimento solto e chegar à sua próxima
-          vaga: portfólio que prova valor, LinkedIn que atrai recrutador e entrevistas que você domina.
-          Método aplicado em projetos reais (AWS, Google, Accenture).
+          Aprenda na prática os padrões reais do mercado sob a orientação de quem lidera e forma
+          profissionais na área.
         </p>
+
+        <ul class="hero-checks">
+          <li>6 sessões 1:1 ao vivo, com gravação</li>
+          <li>Portfólio e LinkedIn revisados por mim</li>
+          <li>Simulações de entrevista com feedback estruturado</li>
+          <li>Plano de 90 dias até a sua próxima vaga</li>
+        </ul>
 
         <div class="btn-group">
           <!-- TODO: troque o link abaixo pelo seu Calendly/Cal.com real -->
@@ -686,6 +711,7 @@
 
     <section class="section" id="produtos">
       <div class="container">
+        <span class="eyebrow" style="text-align:center;">Produtos</span>
         <h2>Escolha seu próximo passo</h2>
         
         <div class="cards-grid">
@@ -701,9 +727,9 @@
             </p>
             <div class="price-tag">
               <span class="amount">R$ 4.300</span>
-              <span class="note"><s>R$ 4.800</s> à vista · economize R$ 500 · ou 4× de R$ 1.200</span>
+              <span class="note"><s>R$ 4.800</s> à vista · economize R$ 500 · ou em até 6x no cartão</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">Como funciona</p>
+            <p class="eyebrow" style="margin:10px 0 0;">Como funciona</p>
             <ul>
               <li>6 sessões 1:1 ao vivo (Zoom) ao longo de 6 semanas · com gravações</li>
               <li>Diagnóstico inicial + plano de carreira sob medida</li>
@@ -730,7 +756,7 @@
             <div class="price-tag">
               <span class="note">📘 E-book · <b style="color:var(--text-primary)">R$ 49,90</b> · em breve · baixe a amostra grátis</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">O que você vai encontrar</p>
+            <p class="eyebrow" style="margin:10px 0 0;">O que você vai encontrar</p>
             <ul>
               <li>Minha jornada real — com acertos e erros</li>
               <li>Frameworks práticos do dia a dia de Cloud Engineers</li>
@@ -738,7 +764,7 @@
               <li>Roteiro de certificações e entrevistas com checklists</li>
               <li>Planos de 30/60/90 dias para acelerar sua empregabilidade</li>
             </ul>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">Temas que você domina</p>
+            <p class="eyebrow" style="margin:10px 0 0;">Temas que você domina</p>
             <ul>
               <li>Fundamentos e conceitos de Computação em Nuvem</li>
               <li>Plataformas de nuvem (AWS, GCP)</li>
@@ -763,7 +789,7 @@
             <div class="price-tag">
               <span class="note">🗓️ Fim de semana · ao vivo · em breve</span>
             </div>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">O que você leva</p>
+            <p class="eyebrow" style="margin:10px 0 0;">O que você leva</p>
             <ul>
               <li>Sua primeira API de GenAI publicada</li>
               <li>Arquitetura mínima de produção</li>
@@ -771,7 +797,7 @@
               <li>Deploy guiado com templates reutilizáveis</li>
               <li>Certificado de conclusão</li>
             </ul>
-            <p style="font-size:14px;font-weight:700;color:var(--accent-purple);margin:4px 0 -4px;">Você sai capaz de</p>
+            <p class="eyebrow" style="margin:10px 0 0;">Você sai capaz de</p>
             <ul>
               <li>Publicar uma API de GenAI em produção</li>
               <li>Controlar custos de LLM na AWS</li>
@@ -788,14 +814,14 @@
 
     <section class="section" id="lideranca" style="padding-top:0;">
       <div class="container">
-        <div style="background:linear-gradient(135deg, rgba(18,58,138,0.4), rgba(167,139,250,0.2));border:1px solid rgba(167,139,250,0.3);border-radius:20px;padding:32px 36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+        <div class="panel" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
           <div style="flex:1;min-width:260px;">
-            <div style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-purple);margin-bottom:8px;">👔 Em breve · Para quem já é sênior</div>
+            <span class="eyebrow">Em breve · para quem já é sênior</span>
             <h3 style="font-size:24px;margin:0 0 6px;">Mentoria de Liderança em Tech</h3>
             <p style="color:var(--text-secondary);font-size:15px;margin:0;max-width:560px;">De Engineer a <b>Head</b>: liderança técnica, presença executiva e o salto para cargos de gestão em Cloud, Data & AI — com quem já é IT Executive.</p>
           </div>
           <form action="https://formspree.io/f/mojgoqjd" method="POST" data-thanks="✅ Perfeito! Você será avisado quando a Mentoria de Liderança abrir." style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-            <input type="email" name="email" placeholder="seu@email.com" required style="min-width:200px;padding:14px 16px;border-radius:12px;border:1px solid var(--card-border);background:rgba(255,255,255,0.06);color:var(--text-primary);font-size:15px;font-family:inherit;" />
+            <input class="af-input" type="email" name="email" placeholder="seu@email.com" required style="min-width:200px;" />
             <input type="hidden" name="_subject" value="Interesse — Mentoria de Liderança em Tech (BR)" />
             <input type="hidden" name="interesse" value="Mentoria de Liderança em Tech" />
             <button type="submit" class="btn btn-secondary" style="white-space:nowrap;">Quero saber quando abrir</button>
@@ -852,8 +878,41 @@
       </div>
     </section>
 
+    <section class="section" id="autor">
+      <div class="container">
+        <span class="eyebrow" style="text-align:center;">Quem vai te orientar</span>
+        <h2>Alessandro Falanque</h2>
+
+        <article class="person">
+          <div class="person-photo" data-initials="AF" role="img" aria-label="Foto de Alessandro Falanque"></div>
+          <div class="person-body">
+            <h3>Alessandro Falanque</h3>
+            <span class="person-role">Head de Data Strategy · Ex-AWS, Google Partner e Accenture</span>
+            <p>
+              Comecei do zero e construí uma carreira internacional em Cloud e Dados: AWS em Cape Town,
+              Google Partner e Accenture em São Paulo, e hoje liderando estratégia de dados em Sydney.
+              No caminho, formei e contratei dezenas de engenheiros — e é exatamente esse repertório de
+              quem está do outro lado da mesa que eu trago para a mentoria.
+            </p>
+            <p>
+              Nada de teoria solta: você sai com portfólio, posicionamento e um plano concreto para as
+              próximas 12 semanas.
+            </p>
+            <div class="person-tags">
+              <span>AWS</span>
+              <span>Google Partner</span>
+              <span>Accenture</span>
+              <span>60+ profissionais formados</span>
+              <span>Sydney · Austrália</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="prova" style="background: rgba(0, 0, 0, 0.2);">
       <div class="container">
+        <span class="eyebrow" style="text-align:center;">Trajetória</span>
         <h2>Credibilidade e Resultados</h2>
         
         <div class="proof-grid">
@@ -886,6 +945,7 @@
 
     <section class="section" id="faq">
       <div class="container">
+        <span class="eyebrow" style="text-align:center;">Dúvidas</span>
         <h2>Perguntas Frequentes</h2>
         
         <div class="faq-grid">
@@ -925,7 +985,7 @@
     </section>
     <section class="section" id="fechamento">
       <div class="container">
-        <div class="capture" style="background: linear-gradient(135deg, var(--accent-blue), rgba(167,139,250,0.25));">
+        <div class="capture capture--accent">
           <h3>Pronto para destravar sua carreira em Cloud?</h3>
           <p>Agende uma conversa gratuita de 30 minutos. Sem compromisso — só um diagnóstico honesto do seu momento e do caminho mais curto até sua próxima vaga.</p>
           <!-- TODO: troque pelo seu Calendly/Cal.com real -->
