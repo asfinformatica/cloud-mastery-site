@@ -509,52 +509,6 @@ header .btn-secondary:hover {
   margin-top: 12px;
 }
 
-/* --------------------------------------------------------------------------
-   10. Faixa de especificações (grid mono abaixo do header)
-   -------------------------------------------------------------------------- */
-.spec-strip {
-  background: var(--af-bg-soft);
-  border-bottom: 1px solid var(--af-line);
-}
-.spec-strip .spec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 0;
-}
-.spec-strip .spec {
-  padding: 18px 22px;
-  border-left: 1px solid var(--af-line);
-}
-.spec-strip .spec:first-child { border-left: none; padding-left: 0; }
-.spec-strip .spec dt {
-  font-family: var(--af-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--af-blue-bright);
-  margin-bottom: 6px;
-}
-.spec-strip .spec dd {
-  font-family: var(--af-mono);
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--af-text);
-  margin: 0;
-}
-.spec-strip .spec.is-green dt { color: var(--af-green); }
-.spec-strip .spec.is-green dd { color: var(--af-green); font-weight: 700; }
-
-/* Variante usada dentro do hero (abaixo do CTA): sem fundo/borda inferior
-   próprios, para não cortar o degradê do hero ao meio — só uma linha fina
-   separando do bloco de cima. */
-.spec-strip--inline {
-  background: transparent;
-  border-bottom: none;
-  border-top: 1px solid var(--af-line);
-  margin-top: 40px;
-}
-
 /* Aviso fino no topo */
 .topbar {
   background: var(--af-bg-soft);
@@ -568,7 +522,7 @@ header .btn-secondary:hover {
 .topbar::before { content: "// "; opacity: 0.7; }
 
 /* --------------------------------------------------------------------------
-   11. Blocos de captura / CTA
+   10. Blocos de captura / CTA
    -------------------------------------------------------------------------- */
 .capture,
 .cta {
@@ -600,7 +554,7 @@ header .btn-secondary:hover {
 }
 
 /* --------------------------------------------------------------------------
-   12. Formulários
+   11. Formulários
    -------------------------------------------------------------------------- */
 input[type="text"],
 input[type="email"],
@@ -625,7 +579,7 @@ input:focus,
 }
 
 /* --------------------------------------------------------------------------
-   13. Bloco "sobre / foto"
+   12. Bloco "sobre / foto"
    -------------------------------------------------------------------------- */
 .person {
   display: grid;
@@ -726,7 +680,7 @@ a.choice .sub {
 }
 
 /* --------------------------------------------------------------------------
-   14. Rodapé e WhatsApp
+   13. Rodapé e WhatsApp
    -------------------------------------------------------------------------- */
 footer {
   background: var(--af-bg-soft);
@@ -752,20 +706,11 @@ footer a { color: var(--af-blue-bright); }
 .wa-float svg { fill: #04210f; }
 
 /* --------------------------------------------------------------------------
-   15. Responsivo
+   14. Responsivo
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
   .person { grid-template-columns: 1fr; }
   .person-photo { min-height: 280px; }
-  .spec-strip .spec-grid { grid-template-columns: repeat(2, 1fr); }
-  .spec-strip .spec {
-    border-left: none;
-    border-top: 1px solid var(--af-line);
-    padding: 12px 14px 12px 0;
-  }
-  .spec-strip .spec:nth-child(1),
-  .spec-strip .spec:nth-child(2) { border-top: none; }
-  .spec-strip .spec dd { font-size: 13px; }
   .topbar { font-size: 11.5px; }
 }
 
