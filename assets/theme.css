@@ -545,6 +545,16 @@ header .btn-secondary:hover {
 .spec-strip .spec.is-green dt { color: var(--af-green); }
 .spec-strip .spec.is-green dd { color: var(--af-green); font-weight: 700; }
 
+/* Variante usada dentro do hero (abaixo do CTA): sem fundo/borda inferior
+   próprios, para não cortar o degradê do hero ao meio — só uma linha fina
+   separando do bloco de cima. */
+.spec-strip--inline {
+  background: transparent;
+  border-bottom: none;
+  border-top: 1px solid var(--af-line);
+  margin-top: 40px;
+}
+
 /* Aviso fino no topo */
 .topbar {
   background: var(--af-bg-soft);
