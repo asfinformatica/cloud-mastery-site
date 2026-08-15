@@ -215,6 +215,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/theme.css" />
   <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/analytics.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alessandro Falanque",
+    "url": "https://alessandrofalanque.com/au/",
+    "image": "https://alessandrofalanque.com/og-cover-en.png",
+    "jobTitle": "Head of Data Strategy",
+    "description": "Career mentor in Cloud, Data & AI. Former AWS (Cape Town), Google Partner and Accenture. Currently leading data strategy in Sydney.",
+    "sameAs": [],
+    "worksFor": { "@type": "Organization", "name": "Alessandro Falanque" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Career mentoring in Cloud, Data & AI",
+    "name": "International Career Mentoring — Alessandro Falanque",
+    "provider": { "@type": "Person", "name": "Alessandro Falanque" },
+    "areaServed": ["AU", "BR"],
+    "url": "https://alessandrofalanque.com/au/mentoria.html",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "AUD",
+      "price": "1500.00",
+      "url": "https://alessandrofalanque.com/au/mentoria.html"
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -291,6 +323,28 @@
         <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px;">
           No obligation · find out if the mentoring is right for where you are now
         </p>
+      </div>
+    </section>
+
+    <section class="section" id="lead-magnet">
+      <div class="container">
+        <div class="capture">
+          <h3>📩 Download a free sample (12 pages)</h3>
+          <p>
+            Drop your best email and download the opening pages of <b>AWS Cloud Engineer</b> right away.
+            The book is in Portuguese — an English edition is coming soon.
+          </p>
+          <!-- Active lead capture form (Formspree form AU: xgogjeoy).
+               Captured emails land in your inbox and the Formspree dashboard. -->
+          <form class="capture-form" action="https://formspree.io/f/xgogjeoy" method="POST" data-next="/au/obrigado.html">
+            <input type="hidden" name="_next" value="https://alessandrofalanque.com/au/obrigado.html" />
+            <input type="email" name="email" placeholder="you@email.com" required />
+            <input type="hidden" name="_subject" value="New lead — first chapter (AU)" />
+            <input type="hidden" name="market" value="Australia" />
+            <button type="submit" class="btn btn-primary">Download sample</button>
+          </form>
+          <small>No spam. Unsubscribe anytime.</small>
+        </div>
       </div>
     </section>
 
@@ -416,28 +470,6 @@
       </div>
     </section>
 
-    <section class="section" id="lead-magnet">
-      <div class="container">
-        <div class="capture">
-          <h3>📩 Download a free sample (12 pages)</h3>
-          <p>
-            Drop your best email and download the opening pages of <b>AWS Cloud Engineer</b> right away.
-            The book is in Portuguese — an English edition is coming soon.
-          </p>
-          <!-- Active lead capture form (Formspree form AU: xgogjeoy).
-               Captured emails land in your inbox and the Formspree dashboard. -->
-          <form class="capture-form" action="https://formspree.io/f/xgogjeoy" method="POST" data-next="/au/obrigado.html">
-            <input type="hidden" name="_next" value="https://alessandrofalanque.com/au/obrigado.html" />
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="you@email.com" required />
-            <input type="hidden" name="_subject" value="New lead — first chapter (AU)" />
-            <input type="hidden" name="market" value="Australia" />
-            <button type="submit" class="btn btn-primary">Download sample</button>
-          </form>
-          <small>No spam. Unsubscribe anytime.</small>
-        </div>
-      </div>
-    </section>
 
     <!-- Testimonials hidden until we have real proof. To re-enable: remove display:none. -->
     <section class="section" id="testimonials" style="background: rgba(0, 0, 0, 0.2); display: none;">

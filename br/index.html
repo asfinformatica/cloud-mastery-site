@@ -623,6 +623,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/theme.css" />
   <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/analytics.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alessandro Falanque",
+    "url": "https://alessandrofalanque.com/br/",
+    "image": "https://alessandrofalanque.com/og-cover.png",
+    "jobTitle": "Head de Data Strategy",
+    "description": "Mentor de carreira em Cloud, Data & AI. Ex-AWS (Cape Town), Google Partner e Accenture. Hoje lidera estratégia de dados em Sydney.",
+    "sameAs": [],
+    "worksFor": { "@type": "Organization", "name": "Alessandro Falanque" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Mentoria de carreira em Cloud, Data & AI",
+    "name": "Mentoria de Carreira Internacional — Alessandro Falanque",
+    "provider": { "@type": "Person", "name": "Alessandro Falanque" },
+    "areaServed": ["BR", "AU"],
+    "url": "https://alessandrofalanque.com/br/mentoria.html",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BRL",
+      "price": "4300.00",
+      "url": "https://alessandrofalanque.com/br/mentoria.html"
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -703,6 +735,28 @@
         <p style="color: var(--text-muted); font-size: 14px; margin-top: 16px;">
           Sem compromisso · entenda se a mentoria faz sentido para o seu momento
         </p>
+      </div>
+    </section>
+
+    <section class="section" id="isca">
+      <div class="container">
+        <div class="capture">
+          <h3>📩 Baixe uma amostra grátis (12 páginas)</h3>
+          <p>
+            Deixe seu melhor e-mail e baixe na hora as primeiras páginas de
+            <b>Rumo ao Sucesso — AWS Cloud Engineer</b>: prefácio, introdução e o começo do 1º capítulo.
+          </p>
+          <!-- Formulário de captura ativo (Formspree form BR: mojgoqjd).
+               Os e-mails chegam na sua caixa e ficam no painel do Formspree. -->
+          <form class="capture-form" action="https://formspree.io/f/mojgoqjd" method="POST" data-next="/br/obrigado.html">
+            <input type="hidden" name="_next" value="https://alessandrofalanque.com/br/obrigado.html" />
+            <input type="email" name="email" placeholder="seu@email.com" required />
+            <input type="hidden" name="_subject" value="Novo lead — 1º capítulo (BR)" />
+            <input type="hidden" name="mercado" value="Brasil" />
+            <button type="submit" class="btn btn-primary">Quero a amostra</button>
+          </form>
+          <small>Sem spam. Cancele quando quiser.</small>
+        </div>
       </div>
     </section>
 
@@ -823,29 +877,6 @@
             <input type="hidden" name="interesse" value="Mentoria de Liderança em Tech" />
             <button type="submit" class="btn btn-secondary" style="white-space:nowrap;">Quero saber quando abrir</button>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="isca">
-      <div class="container">
-        <div class="capture">
-          <h3>📩 Baixe uma amostra grátis (12 páginas)</h3>
-          <p>
-            Deixe seu melhor e-mail e baixe na hora as primeiras páginas de
-            <b>Rumo ao Sucesso — AWS Cloud Engineer</b>: prefácio, introdução e o começo do 1º capítulo.
-          </p>
-          <!-- Formulário de captura ativo (Formspree form BR: mojgoqjd).
-               Os e-mails chegam na sua caixa e ficam no painel do Formspree. -->
-          <form class="capture-form" action="https://formspree.io/f/mojgoqjd" method="POST" data-next="/br/obrigado.html">
-            <input type="hidden" name="_next" value="https://alessandrofalanque.com/br/obrigado.html" />
-            <input type="text" name="nome" placeholder="Seu nome" required />
-            <input type="email" name="email" placeholder="seu@email.com" required />
-            <input type="hidden" name="_subject" value="Novo lead — 1º capítulo (BR)" />
-            <input type="hidden" name="mercado" value="Brasil" />
-            <button type="submit" class="btn btn-primary">Quero a amostra</button>
-          </form>
-          <small>Sem spam. Cancele quando quiser.</small>
         </div>
       </div>
     </section>
