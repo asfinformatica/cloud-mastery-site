@@ -603,20 +603,6 @@ input:focus,
   background-repeat: no-repeat, no-repeat, repeat;
   filter: grayscale(1) contrast(1.05);
 }
-/* Iniciais aparecem enquanto não houver foto em /assets/alessandro.jpg */
-.person-photo::after {
-  content: attr(data-initials);
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--af-display);
-  font-size: 64px;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.10);
-  letter-spacing: 0.04em;
-}
 .person-body { padding: 32px 34px; }
 .person-body h3 {
   font-size: 26px;
