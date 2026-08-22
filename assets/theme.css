@@ -212,6 +212,19 @@ main .hero .lead { max-width: 780px; }
   line-height: 1;
 }
 
+.preorder-banner {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 18px 0 2px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--af-amber);
+  background: rgba(245, 165, 36, 0.09);
+  color: var(--af-text-2);
+  font-size: 14px;
+}
+.preorder-banner strong { color: var(--af-amber); font-family: var(--af-mono); font-size: 13px; }
+
 /* --------------------------------------------------------------------------
    4. Header / navegação
    -------------------------------------------------------------------------- */

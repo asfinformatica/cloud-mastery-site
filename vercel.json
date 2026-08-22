@@ -4,6 +4,8 @@
   ],
   "rewrites": [
     { "source": "/mentoria", "destination": "/br/mentoria.html" },
+    { "source": "/br/mentoria-corporativa", "destination": "/br/mentoria-corporativa.html" },
+    { "source": "/au/corporate-mentoring", "destination": "/au/mentoria-corporate.html" },
     { "source": "/mentoria/en", "destination": "/au/mentoria.html" },
     { "source": "/workshop", "destination": "/Workshop001.html" },
     { "source": "/livro", "destination": "/br/livro.html" },

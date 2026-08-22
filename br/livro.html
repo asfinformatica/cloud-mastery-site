@@ -105,8 +105,12 @@ body{font-size:18px}.list{font-size:18px}.faq details{font-size:18px}
 <section class="hero">
   <div class="container grid hero-grid">
     <div>
-      <span class="badge">📘 E-book · R$ 49,90 · em breve</span>
+      <span class="badge">📘 PRÉ-ENCOMENDA · R$ 34,90 para os 100 primeiros</span>
       <h1>Rumo ao Sucesso:<br><span class="grad">AWS Cloud Engineer</span></h1>
+      <div class="preorder-banner" data-launch="2026-09-06T00:00:00-03:00">
+        <strong>LANÇAMENTO EM <span data-countdown>carregando...</span></strong>
+        <span>100 primeiras reservas por R$ 34,90 · preço normal R$ 49,90</span>
+      </div>
       <p>O guia completo para <b>iniciar sua carreira em Cloud</b> — dos fundamentos da nuvem às
       certificações, com a jornada real de quem já formou centenas de profissionais e trabalha
       do Brasil para o mundo. Não é um manual técnico genérico: é o mapa que eu queria ter quando comecei.</p>
@@ -234,6 +238,23 @@ body{font-size:18px}.list{font-size:18px}.faq details{font-size:18px}
           });
       });
     });
+  })();
+</script>
+<script>
+  (function(){
+    var banner = document.querySelector('[data-launch]');
+    var output = banner && banner.querySelector('[data-countdown]');
+    if (!banner || !output) return;
+    var launch = new Date(banner.getAttribute('data-launch')).getTime();
+    function update(){
+      var remaining = Math.max(0, launch - Date.now());
+      var days = Math.floor(remaining / 86400000);
+      var hours = Math.floor(remaining % 86400000 / 3600000);
+      var minutes = Math.floor(remaining % 3600000 / 60000);
+      output.textContent = days + ' dias, ' + hours + 'h ' + minutes + 'min';
+    }
+    update();
+    window.setInterval(update, 60000);
   })();
 </script>
 
