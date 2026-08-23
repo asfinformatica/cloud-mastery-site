@@ -614,7 +614,8 @@ header .btn-secondary:hover {
   .cards-grid .card .product-toggle { position: absolute; top: 18px; right: 18px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; padding: 0; border: 1px solid var(--af-blue); border-radius: 50%; background: transparent; color: #fff; font: 700 24px/1 var(--af-body); cursor: pointer; }
   .cards-grid .card.is-open > :not(.card-flag):not(h3):not(.product-toggle) { display: block; }
   .cards-grid .card.is-open ul { display: block; }
-  .cards-grid .card.is-open .card-actions { display: flex; }
+  .cards-grid .card.is-open .card-actions { display: flex; flex-direction: row; align-items: stretch; }
+  .cards-grid .card.is-open .card-actions .btn { min-height: 90px; line-height: 1.35; }
   .cards-grid .card.is-open .product-toggle { background: var(--af-blue); }
 }
 .capture small,
