@@ -581,10 +581,20 @@ header .btn-secondary:hover {
   font-family: inherit;
   font-size: inherit;
 }
-.newsletter-cta .btn { flex-shrink: 0; }
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.newsletter-form input[type="email"] { min-width: 220px; }
+.newsletter-form .input--hidden,
+.newsletter-form iframe { display: none; }
 @media (max-width: 700px) {
   .newsletter-cta { align-items: flex-start; flex-direction: column; gap: 18px; padding: 24px; }
-  .newsletter-cta .btn { width: 100%; justify-content: center; }
+  .newsletter-form { width: 100%; flex-direction: column; align-items: stretch; }
+  .newsletter-form input[type="email"],
+  .newsletter-form .btn { width: 100%; min-width: 0; justify-content: center; }
 }
 .capture h3,
 .cta h2 { font-family: var(--af-display); }
