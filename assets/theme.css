@@ -578,8 +578,8 @@ header .btn-secondary:hover {
   display: block;
   margin-top: 8px;
   color: var(--af-muted);
-  font-family: var(--af-mono);
-  font-size: 12px;
+  font-family: inherit;
+  font-size: inherit;
 }
 .newsletter-cta .btn { flex-shrink: 0; }
 @media (max-width: 700px) {
@@ -588,6 +588,23 @@ header .btn-secondary:hover {
 }
 .capture h3,
 .cta h2 { font-family: var(--af-display); }
+.cards-grid .card:nth-child(2) { order: 3; }
+.cards-grid .card:nth-child(3) { order: 2; }
+.product-toggle { display: none; }
+@media (max-width: 700px) {
+  .cards-grid { gap: 12px; }
+  .cards-grid .card,
+  .cards-grid .card:hover { transform: none; box-shadow: none; }
+  .cards-grid .card { position: relative; }
+  .cards-grid .card > :not(.card-flag):not(h3):not(.product-toggle) { display: none; }
+  .cards-grid .card h3 { margin: 0 !important; padding-right: 48px; min-height: 42px; }
+  .cards-grid .card .card-flag { display: inline-block; margin: -24px -24px 12px; }
+  .cards-grid .card .product-toggle { position: absolute; top: 18px; right: 18px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; padding: 0; border: 1px solid var(--af-blue); border-radius: 50%; background: transparent; color: #fff; font: 700 24px/1 var(--af-body); cursor: pointer; }
+  .cards-grid .card.is-open > :not(.card-flag):not(h3):not(.product-toggle) { display: block; }
+  .cards-grid .card.is-open ul { display: block; }
+  .cards-grid .card.is-open .card-actions { display: flex; }
+  .cards-grid .card.is-open .product-toggle { background: var(--af-blue); }
+}
 .capture small,
 .cta small {
   font-family: var(--af-mono);
