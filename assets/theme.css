@@ -265,6 +265,9 @@ header {
 }
 .nav-links a:hover,
 .nav a:hover { color: var(--af-blue-bright); }
+.nav-links a:not(.btn),
+.nav > a:not(.btn),
+header .nav a:not(.btn) { color: #ffffff; }
 
 .nav-links a.btn,
 .nav a.btn { text-transform: uppercase; }
@@ -287,6 +290,7 @@ header {
   border-radius: var(--af-r-sm);
   padding: 11px 18px;
 }
+main .hero .badge { color: #ffffff; }
 .badge.is-green {
   color: var(--af-green);
   background: var(--af-green-soft);
@@ -530,7 +534,7 @@ header .btn-secondary:hover {
   padding: 10px 16px;
   font-family: var(--af-mono);
   font-size: 12.5px;
-  color: var(--af-green);
+  color: #ffffff;
 }
 .topbar::before { content: "// "; opacity: 0.7; }
 
@@ -547,6 +551,40 @@ header .btn-secondary:hover {
 .cta--accent {
   background: linear-gradient(180deg, rgba(47, 124, 246, 0.14), rgba(15, 21, 32, 0)) , var(--af-surface);
   border-color: rgba(47, 124, 246, 0.4);
+}
+.newsletter-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 26px 30px;
+  background: linear-gradient(100deg, rgba(47, 124, 246, 0.2), rgba(0, 224, 92, 0.08)), var(--af-surface);
+  border: 1px solid rgba(47, 124, 246, 0.55);
+  border-left: 3px solid var(--af-green);
+  border-radius: var(--af-r);
+}
+.newsletter-cta h2 {
+  margin: 0 0 6px;
+  font-family: var(--af-display);
+  font-size: clamp(22px, 3vw, 30px);
+}
+.newsletter-cta p {
+  max-width: 660px;
+  margin: 0;
+  color: var(--af-text-2);
+  line-height: 1.6;
+}
+.newsletter-cta small {
+  display: block;
+  margin-top: 8px;
+  color: var(--af-muted);
+  font-family: var(--af-mono);
+  font-size: 12px;
+}
+.newsletter-cta .btn { flex-shrink: 0; }
+@media (max-width: 700px) {
+  .newsletter-cta { align-items: flex-start; flex-direction: column; gap: 18px; padding: 24px; }
+  .newsletter-cta .btn { width: 100%; justify-content: center; }
 }
 .capture h3,
 .cta h2 { font-family: var(--af-display); }
@@ -628,7 +666,7 @@ input:focus,
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--af-blue-bright);
+  color: #ffffff;
   margin-bottom: 16px;
   line-height: 1.6;
 }
