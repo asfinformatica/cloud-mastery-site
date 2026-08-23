@@ -584,18 +584,34 @@ header .btn-secondary:hover {
 }
 .newsletter-form {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  width: min(100%, 470px);
+  min-width: 0;
   flex-shrink: 0;
 }
 .newsletter-form input[type="email"] { min-width: 220px; }
 .newsletter-form .input--hidden,
 .newsletter-form iframe { display: none; }
+.newsletter-status {
+  display: none;
+  flex-basis: 100%;
+  min-width: 0;
+  margin: 0;
+  color: var(--af-text-2);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.newsletter-status.is-visible { display: block; }
+.newsletter-status.is-success { color: var(--af-green); }
+.newsletter-status.is-error { color: #ffb4ab; }
 @media (max-width: 700px) {
   .newsletter-cta { align-items: flex-start; flex-direction: column; gap: 18px; padding: 24px; }
   .newsletter-form { width: 100%; flex-direction: column; align-items: stretch; }
   .newsletter-form input[type="email"],
   .newsletter-form .btn { width: 100%; min-width: 0; justify-content: center; }
+  .newsletter-status { flex-basis: auto; }
 }
 .capture h3,
 .cta h2 { font-family: var(--af-display); }

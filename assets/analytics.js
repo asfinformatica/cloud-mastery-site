@@ -22,4 +22,24 @@
       track('form_submit', form.getAttribute('data-next') || form.action);
     }
   }, true);
+
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (form) {
+    var button = form.querySelector('button[type="submit"]');
+    var status = form.querySelector('.newsletter-status');
+    var response = form.querySelector('iframe');
+    if (!button || !status || !response) return;
+
+    form.addEventListener('submit', function () {
+      button.disabled = true;
+      status.textContent = 'Enviando...';
+      status.className = 'newsletter-status is-visible';
+    });
+
+    response.addEventListener('load', function () {
+      if (!button.disabled) return;
+      status.textContent = 'Cadastro enviado. Confira seu email para confirmar a inscrição.';
+      status.className = 'newsletter-status is-visible is-success';
+      button.disabled = false;
+    });
+  });
 })();
