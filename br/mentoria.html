@@ -215,20 +215,6 @@ body{font-size:18px}.list{font-size:18px}.faq details{font-size:18px}
   </div>
 </section>
 
-<section class="section faq" id="faq">
-  <div class="container">
-    <h2>Perguntas frequentes</h2>
-    <details><summary>Serve para iniciantes?</summary><p>Sim. Há trilha para iniciantes e para transição de carreira. Ajusto os desafios conforme sua base.</p></details>
-    <details><summary>Como funciona o pagamento?</summary><p>À vista (R$ 4.300) ou em até 6x no cartão. Fechamos os detalhes na conversa inicial.</p></details>
-    <details><summary>Ajuda com entrevistas?</summary><p>Sim: roteiro, simulações, storytelling e estratégia de oferta.</p></details>
-    <details><summary>E se eu estiver mirando o mercado internacional?</summary><p>Perfeito — grande parte da minha experiência é internacional (AWS, Google, Sydney). Ajusto a estratégia para o mercado que você quer.</p></details>
-    <details><summary>Existe garantia de resultado?</summary><p>Não prometo contratação, porque o resultado também depende do seu contexto e da execução. Prometo um processo estruturado, feedback direto e um plano aplicável ao seu objetivo.</p></details>
-    <details><summary>Posso cancelar a mentoria?</summary><p>As condições de cancelamento, reagendamento e encerramento ficam descritas no contrato antes do início do programa.</p></details>
-    <details><summary>Como são definidas as vagas?</summary><p>Abro poucas vagas por mês para manter a qualidade das revisões e do acompanhamento entre as sessões.</p></details>
-    <details><summary>Vocês oferecem mentoria para empresas?</summary><p>Sim. Conheça a <a href="/br/mentoria-corporativa">Mentoria Corporativa</a>, com escopo e investimento definidos conforme o time e os objetivos da organização.</p></details>
-  </div>
-</section>
-
 <section class="section" id="contato" style="background: rgba(0, 0, 0, 0.2);">
   <div class="container">
     <div style="background: linear-gradient(135deg, rgba(18,58,138,.5), rgba(167,139,250,.25)); border: 1px solid rgba(167,139,250,.3); border-radius: 20px; padding: 40px; text-align: center; max-width: 600px; margin: 0 auto;">
@@ -246,38 +232,19 @@ body{font-size:18px}.list{font-size:18px}.faq details{font-size:18px}
   </div>
 </section>
 
-<script>
-  (function(){
-    document.querySelectorAll('.mentoria-form').forEach(function(form){
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        var btn = form.querySelector('button[type="submit"]');
-        var original = btn ? btn.textContent : "";
-        if(btn){ btn.disabled = true; btn.textContent = "Enviando..."; }
-
-        var nome = form.querySelector('input[name="nome"]').value;
-        var email = form.querySelector('input[name="email"]').value;
-        var telefone = form.querySelector('input[name="telefone"]').value;
-
-        fetch("/api/book-signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nome: nome, email: email, telefone: telefone, idioma: "pt-br", tipo: "mentoria_individual" })
-        }).then(function(r){
-          if(r.ok){
-            form.innerHTML = '<div style="font-weight:700;color:#fff;font-size:16px;padding:16px;text-align:center;background:rgba(16,185,129,0.1);border-radius:12px;border:1px solid rgba(16,185,129,0.3);">✅ Obrigado! Entro em contato em até 24h.</div>';
-          } else {
-            alert("Erro ao enviar. Tente novamente.");
-            if(btn){ btn.disabled = false; btn.textContent = original; }
-          }
-        }).catch(function(){
-          alert("Erro de conexão. Tente novamente.");
-          if(btn){ btn.disabled = false; btn.textContent = original; }
-        });
-      });
-    });
-  })();
-</script>
+<section class="section faq" id="faq">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Serve para iniciantes?</summary><p>Sim. Há trilha para iniciantes e para transição de carreira. Ajusto os desafios conforme sua base.</p></details>
+    <details><summary>Como funciona o pagamento?</summary><p>À vista (R$ 4.300) ou em até 6x no cartão. Fechamos os detalhes na conversa inicial.</p></details>
+    <details><summary>Ajuda com entrevistas?</summary><p>Sim: roteiro, simulações, storytelling e estratégia de oferta.</p></details>
+    <details><summary>E se eu estiver mirando o mercado internacional?</summary><p>Perfeito — grande parte da minha experiência é internacional (AWS, Google, Sydney). Ajusto a estratégia para o mercado que você quer.</p></details>
+    <details><summary>Existe garantia de resultado?</summary><p>Não prometo contratação, porque o resultado também depende do seu contexto e da execução. Prometo um processo estruturado, feedback direto e um plano aplicável ao seu objetivo.</p></details>
+    <details><summary>Posso cancelar a mentoria?</summary><p>As condições de cancelamento, reagendamento e encerramento ficam descritas no contrato antes do início do programa.</p></details>
+    <details><summary>Como são definidas as vagas?</summary><p>Abro poucas vagas por mês para manter a qualidade das revisões e do acompanhamento entre as sessões.</p></details>
+    <details><summary>Vocês oferecem mentoria para empresas?</summary><p>Sim. Conheça a <a href="/br/mentoria-corporativa">Mentoria Corporativa</a>, com escopo e investimento definidos conforme o time e os objetivos da organização.</p></details>
+  </div>
+</section>
 
 <footer>
   <div class="container">© 2025 Alessandro Falanque – Mentoria · <a href="/br/" style="color:var(--accent)">Voltar ao início</a><br><a href="mailto:afalanque@gmail.com">afalanque@gmail.com</a> · <a href="https://www.instagram.com/alessandro.falanque/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/alessandrofalanque/" target="_blank" rel="noopener">LinkedIn</a></div>
