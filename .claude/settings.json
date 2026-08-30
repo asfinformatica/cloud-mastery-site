@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(git commit -m ' *)",
-      "Bash(cd c:\\\\\\\\Users\\\\\\\\aless\\\\\\\\Documents\\\\\\\\Mentorship)"
+      "Bash(cd c:\\\\\\\\Users\\\\\\\\aless\\\\\\\\Documents\\\\\\\\Mentorship)",
+      "Bash(git commit -m 'Remove '\\\\''Agendar conversa'\\\\'' buttons from mentorship page *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
     ]
   }
 }
