@@ -104,6 +104,39 @@
       <p class="muted">O formato, duração e investimento são definidos após uma conversa inicial sobre o contexto da empresa.</p>
     </div></div></section>
     <section class="section faq"><div class="container"><h2>Perguntas frequentes</h2><details><summary>Para quais empresas é indicado?</summary><p>Para empresas que precisam acelerar a maturidade técnica de squads, estruturar uma capability ou alinhar tecnologia e estratégia.</p></details><details><summary>Qual é o investimento?</summary><p>O valor é sob consulta e depende do número de pessoas, escopo, duração e formato da trilha.</p></details><details><summary>É uma palestra ou uma mentoria contínua?</summary><p>Pode ser uma sessão executiva, uma trilha de workshops ou um programa contínuo. O desenho acompanha o objetivo do time.</p></details><details><summary>Como começamos?</summary><p>Envie um resumo do desafio pelo botão de contato. Marcamos uma conversa para entender o contexto e preparar uma proposta.</p></details></div></section>
+    <section class="section" id="contato" style="background: rgba(0, 0, 0, 0.2);"><div class="container"><div style="background: linear-gradient(135deg, rgba(18,58,138,.5), rgba(167,139,250,.25)); border: 1px solid rgba(167,139,250,.3); border-radius: 20px; padding: 40px; text-align: center; max-width: 600px; margin: 0 auto;"><h2 style="margin-top: 0; margin-bottom: 16px;">Vamos conversar?</h2><p style="color: var(--muted); margin-bottom: 28px;">Deixe seus dados que entro em contato com você em até 24h para entender os desafios da sua empresa.</p><form class="mentoria-form" style="display: flex; flex-direction: column; gap: 14px;"><input type="text" name="nome" placeholder="Seu nome completo" required style="padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 16px; font-family: inherit;" /><input type="email" name="email" placeholder="seu@email.com" required style="padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 16px; font-family: inherit;" /><input type="tel" name="telefone" placeholder="(11) 99999-9999" style="padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 16px; font-family: inherit;" /><button class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">Solicitar Contato</button><small style="color: var(--text-muted); font-size: 13px;">Respondo em até 24h · sem spam</small></form></div></div></section>
+    <script>
+      (function(){
+        document.querySelectorAll('.mentoria-form').forEach(function(form){
+          form.addEventListener("submit", function(e){
+            e.preventDefault();
+            var btn = form.querySelector('button[type="submit"]');
+            var original = btn ? btn.textContent : "";
+            if(btn){ btn.disabled = true; btn.textContent = "Enviando..."; }
+
+            var nome = form.querySelector('input[name="nome"]').value;
+            var email = form.querySelector('input[name="email"]').value;
+            var telefone = form.querySelector('input[name="telefone"]').value;
+
+            fetch("/api/book-signup", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ nome: nome, email: email, telefone: telefone, idioma: "pt-br", tipo: "mentoria_corporativa" })
+            }).then(function(r){
+              if(r.ok){
+                form.innerHTML = '<div style="font-weight:700;color:#fff;font-size:16px;padding:16px;text-align:center;background:rgba(16,185,129,0.1);border-radius:12px;border:1px solid rgba(16,185,129,0.3);">✅ Obrigado! Entro em contato em até 24h.</div>';
+              } else {
+                alert("Erro ao enviar. Tente novamente.");
+                if(btn){ btn.disabled = false; btn.textContent = original; }
+              }
+            }).catch(function(){
+              alert("Erro de conexão. Tente novamente.");
+              if(btn){ btn.disabled = false; btn.textContent = original; }
+            });
+          });
+        });
+      })();
+    </script>
   </main>
   <footer><div class="container">© 2025 Alessandro Falanque – Mentoria Corporativa · <a href="/br/" style="color:var(--accent)">Voltar ao início</a><br><a href="mailto:afalanque@gmail.com">afalanque@gmail.com</a> · <a href="https://www.instagram.com/alessandro.falanque/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/alessandrofalanque/" target="_blank" rel="noopener">LinkedIn</a></div></footer>
 </body>

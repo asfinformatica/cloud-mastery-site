@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { nome, email, idioma, tipo } = req.body;
+  const { nome, email, telefone, idioma, tipo } = req.body;
 
   if (!nome || !email || !idioma) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -50,6 +50,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         email: email,
         firstName: nome,
+        phone: telefone || null,
         listIds: [config.listId],
         updateEnabled: true
       })
