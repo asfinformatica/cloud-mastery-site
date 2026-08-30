@@ -538,64 +538,6 @@
       </div>
     </section>
 
-    <section class="section" id="mentoria-cta" style="background: rgba(0, 0, 0, 0.2);">
-      <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(18,58,138,.5), rgba(167,139,250,.25)); border: 1px solid rgba(167,139,250,.3); border-radius: 20px; padding: 40px; text-align: center;">
-          <h2 style="margin-bottom: 16px;">Ready to transform your career?</h2>
-          <p style="color: var(--text-secondary); max-width: 560px; margin: 0 auto 28px; font-size: 16px;">Leave your details and I'll get in touch within 24 hours.</p>
-
-          <form class="mentoria-form" style="display: flex; flex-direction: column; gap: 14px; max-width: 520px; margin: 0 auto;">
-            <input type="text" name="nome" placeholder="Your full name" required aria-label="Name" style="padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 16px; font-family: inherit;" />
-            <input type="email" name="email" placeholder="you@email.com" required aria-label="Email" style="padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); color: #fff; font-size: 16px; font-family: inherit;" />
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <label style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); cursor: pointer;">
-                <input type="radio" name="tipo" value="mentoria_individual" checked required />
-                💼 Individual Mentoring
-              </label>
-              <label style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); cursor: pointer;">
-                <input type="radio" name="tipo" value="mentoria_corporativa" required />
-                🏢 Corporate Mentoring
-              </label>
-            </div>
-            <button class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">Request Contact</button>
-            <small style="color: var(--text-muted); font-size: 13px;">I respond within 24h · no spam</small>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      (function(){
-        document.querySelectorAll('.mentoria-form').forEach(function(form){
-          form.addEventListener("submit", function(e){
-            e.preventDefault();
-            var btn = form.querySelector('button[type="submit"]');
-            var original = btn ? btn.textContent : "";
-            if(btn){ btn.disabled = true; btn.textContent = "Sending..."; }
-
-            var nome = form.querySelector('input[name="nome"]').value;
-            var email = form.querySelector('input[name="email"]').value;
-            var tipo = form.querySelector('input[name="tipo"]:checked').value;
-
-            fetch("/api/book-signup", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ nome: nome, email: email, idioma: "en-au", tipo: tipo })
-            }).then(function(r){
-              if(r.ok){
-                form.innerHTML = '<div style="font-weight:700;color:#fff;font-size:16px;padding:16px;text-align:center;background:rgba(16,185,129,0.1);border-radius:12px;border:1px solid rgba(16,185,129,0.3);">✅ Thanks! I\'ll get in touch within 24h.</div>';
-              } else {
-                alert("Error sending. Try again.");
-                if(btn){ btn.disabled = false; btn.textContent = original; }
-              }
-            }).catch(function(){
-              alert("Connection error. Try again.");
-              if(btn){ btn.disabled = false; btn.textContent = original; }
-            });
-          });
-        });
-      })();
-    </script>
   </main>
 
   <footer>
