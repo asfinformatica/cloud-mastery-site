@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en-au">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBY7M64D89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DBY7M64D89');
+  </script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Interview Ready — Data Engineer | Alessandro Falanque</title>
+  <meta name="description" content="Interview prep program for Data Engineers (junior and mid-level): STAR stories in English, live SQL, recorded mock interviews. 8 × 1:1 sessions with Alessandro Falanque." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Interview Ready — Data Engineer | Alessandro Falanque" />
+  <meta property="og:description" content="You already have the technical foundation. This program turns what you know into clear, structured answers in English — even under pressure." />
+  <meta property="og:url" content="https://alessandrofalanque.com/au/interview-ready.html" />
+  <meta property="og:image" content="https://alessandrofalanque.com/og-cover-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en-au" href="https://alessandrofalanque.com/au/interview-ready.html" />
+  <link rel="alternate" hreflang="pt-br" href="https://alessandrofalanque.com/br/interview-ready.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0b1b3b;--bg2:#0e2f72;--bg3:#123a8a;
+      --text:#e9eefc;--muted:#b8c7f0;--accent:#6ad1ff;--primary:#7a8bff;
+      --radius:18px;--shadow:0 10px 40px rgba(0,0,0,.25);--glass:rgba(255,255,255,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);
+      background: radial-gradient(1800px 900px at 10% -20%, #0d1b3d 0%, transparent 55%),
+                  radial-gradient(1600px 800px at 90% -15%, #0f2a6b 0%, transparent 55%),
+                  linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%);}
+    .container{max-width:1200px;margin:0 auto;padding:0 32px}
+    header{position:sticky;top:0;z-index:50;background:rgba(7,14,34,.75);backdrop-filter: blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    .nav a:hover{color:#fff}
+    .btn{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,#8ab4ff,#e6a6ff);color:#0a0f2a}
+    .btn-ghost{border:1px solid rgba(255,255,255,.14);color:#fff}
+    .hero{padding:96px 0 56px}
+    .hero h1{font-size:48px;line-height:1.08;margin:10px 0 12px}
+    .hero p{color:var(--muted);font-size:20px;max-width:760px;line-height:1.7}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.05);font-weight:700;color:#d8e2ff}
+    .grid{display:grid;gap:28px}
+    .three{grid-template-columns:repeat(3,1fr)}
+    .two{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--glass);border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .section{padding:72px 0}
+    .kpi{display:flex;gap:10px;align-items:center;color:var(--muted)}
+    .list{margin:12px 0 0;padding:0 0 0 20px;line-height:1.8}
+    .muted{color:var(--muted)}
+    .faq details{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin:10px 0}
+    footer{padding:48px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+    .section-intro{max-width:760px;margin:0 0 8px}
+    .section-intro h2{font-size:34px;margin:0 0 10px}
+    .section-intro p{color:var(--muted);font-size:19px;line-height:1.6}
+    .step .num{font-size:28px;font-weight:800;color:var(--accent);margin-bottom:6px;display:block}
+    .step h3{font-size:19px;margin:0 0 8px;line-height:1.3}
+    .step p{color:var(--muted);line-height:1.6;margin:0;font-size:16px}
+    .meta-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:32px;border-top:1px solid rgba(255,255,255,.1);padding-top:24px}
+    .meta-item .k{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+    .meta-item .v{font-weight:700}
+    @media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero h1{font-size:40px}}
+  .wa-float{position:fixed;right:20px;bottom:20px;display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:800;font-size:16px;font-family:inherit;text-decoration:none;padding:13px 20px 13px 15px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.35);z-index:9999;transition:transform .2s}.wa-float:hover{transform:scale(1.05)}.wa-float svg{width:26px;height:26px;fill:#fff;flex:none}@media(max-width:520px){.wa-float{padding:15px;border-radius:50%}.wa-float span{display:none}}
+
+/* leitura: corpo de texto maior */
+body{font-size:18px}.list{font-size:18px}.faq details{font-size:18px}
+</style>
+  <!-- Identidade visual compartilhada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/theme.css" />
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/assets/analytics.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Interview preparation for Data Engineers",
+    "name": "Interview Ready — Data Engineer — Alessandro Falanque",
+    "provider": { "@type": "Person", "name": "Alessandro Falanque" },
+    "areaServed": ["AU", "BR"],
+    "url": "https://alessandrofalanque.com/au/interview-ready.html",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "AUD",
+      "price": "1500.00",
+      "url": "https://alessandrofalanque.com/au/interview-ready.html"
+    }
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="/au/" class="brand" style="color:#fff;text-decoration:none">Alessandro Falanque <span class="brand-tag">Cloud · Data · AI</span></a>
+      <div class="nav">
+        <a href="#blockers">The program</a>
+        <a href="#sessions">The 8 sessions</a>
+        <a href="#investment">Investment</a>
+        <a href="#faq">FAQ</a>
+        <a href="/br/interview-ready.html">🇧🇷 PT</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Data Engineer · Junior &amp; Mid-level</span>
+    <h1>Interview <span class="grad">Ready</span></h1>
+    <p>You already have the technical foundation. This program turns what you know into <b>clear, structured answers in English</b> — even under pressure.</p>
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Book a free chat</a>
+      <a class="btn btn-ghost" href="#sessions">See the 8 sessions</a>
+    </div>
+    <div class="grid three" style="margin-top:28px">
+      <div class="kpi">🕐 8 × 1-hour sessions · 1:1</div>
+      <div class="kpi">💻 Online</div>
+      <div class="kpi">🇬🇧 Conducted in English</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="blockers">
+  <div class="container">
+    <div class="section-intro">
+      <h2>The three blockers this program tackles</h2>
+      <p>It's not the technical knowledge that's missing. It's what happens in the moment — and that's exactly where this program works.</p>
+    </div>
+    <div class="grid three" style="margin-top:28px">
+      <div class="card">
+        <span class="eyebrow is-green">Nerves</span>
+        <p class="muted">Repetition with feedback until the interview feels like routine, not a surprise.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow is-green">Forgetting</span>
+        <p class="muted">A written, rehearsed bank of stories. You don't improvise — you remember.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow is-green">English</span>
+        <p class="muted">Interview-specific English: your answers, and the phrases that save the moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="program" style="padding-top:0">
+  <div class="container">
+    <div class="card">
+      <h3 style="margin:0 0 14px">What you take away</h3>
+      <ul class="list">
+        <li>A bank of 4 to 6 STAR stories in English, ready for behavioural questions</li>
+        <li>An interview phrase kit in English: buy time, ask for clarification, structure your answer</li>
+        <li>Live SQL practice and pipeline design, thinking out loud</li>
+        <li>Using AI tools in the Data Engineer's day-to-day — and how to talk about it in interviews</li>
+        <li>Two recorded mock interviews — before and after — so you can see your own progress</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sessions">
+  <div class="container">
+    <div class="section-intro">
+      <h2>8 sessions, one progression</h2>
+      <p>From diagnosis to final simulation — each session builds on the last.</p>
+    </div>
+    <div class="grid two" style="margin-top:28px">
+      <div class="card step"><span class="num">01</span><h3>Diagnosis</h3><p>A full recorded mock interview. We review it together and set your baseline.</p></div>
+      <div class="card step"><span class="num">02</span><h3>Story bank</h3><p>We build 4 to 6 STAR stories from your real experience.</p></div>
+      <div class="card step"><span class="num">03</span><h3>Interview English</h3><p>Your stories out loud, plus the phrase kit, until they sound natural.</p></div>
+      <div class="card step"><span class="num">04</span><h3>Live behavioural</h3><p>Random and follow-up questions, at the pace of a real interview.</p></div>
+      <div class="card step"><span class="num">05</span><h3>Technical: SQL &amp; concepts</h3><p>Live SQL, modelling, batch vs streaming and data quality — thinking out loud.</p></div>
+      <div class="card step"><span class="num">06</span><h3>Pipeline design</h3><p>A typical junior/mid-level case: ingestion, orchestration and trade-offs.</p></div>
+      <div class="card step"><span class="num">07</span><h3>AI in the Data Engineer's day-to-day</h3><p>AI assistants for writing, reviewing and documenting SQL and pipeline code — while validating the result. And how to present that in an interview.</p></div>
+      <div class="card step"><span class="num">08</span><h3>Final simulation</h3><p>A full recorded interview, compared against session 1, plus a plan for next steps.</p></div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-item"><div class="k">Duration</div><div class="v">8 × 1-hour sessions</div></div>
+      <div class="meta-item"><div class="k">Format</div><div class="v">Online, 1:1</div></div>
+      <div class="meta-item"><div class="k">Language</div><div class="v">Conducted in English</div></div>
+      <div class="meta-item"><div class="k">Between sessions</div><div class="v">Hands-on tasks</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="investment">
+  <div class="container">
+    <span class="eyebrow is-green">Investment</span>
+    <h2 style="margin:0 0 16px">Investment</h2>
+    <p class="muted">One-on-one mentoring. Limited spots each month to keep the dedication real.</p>
+    <div class="grid two" style="margin-top:20px">
+      <div class="card offer-box">
+        <span class="offer-label">Interview Ready — 1:1</span>
+        <h3>Interview preparation</h3>
+        <p><span class="offer-price">AUD 1,500</span></p>
+        <p style="font-size: 18px; color: var(--muted); margin: 8px 0;">single payment</p>
+        <ul class="list">
+          <li>8 × 1-hour 1:1 sessions, conducted in English</li>
+          <li>STAR story bank + interview phrase kit</li>
+          <li>Live SQL, pipeline design and AI use in interviews</li>
+          <li>Two recorded mock interviews (before &amp; after)</li>
+        </ul>
+        <div style="margin-top:16px">
+          <a class="btn btn-primary" href="https://calendly.com/afalanque/30-minutes-meeting" target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>International Career Mentoring</h3>
+        <p class="muted" style="margin-top:4px">Looking for something broader — career strategy, portfolio and LinkedIn, not just interview prep?</p>
+        <div style="margin-top:16px">
+          <a class="btn btn-ghost" href="/au/mentoria.html">See Career Mentoring</a>
+        </div>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:20px;font-size:15px">This program prepares you for the selection process; the final hiring decision always sits with the company.</p>
+  </div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="container">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is this for someone just starting in Data Engineering?</summary><p>It's for junior or mid-level folks who already have the technical foundation and need to turn that into clear interview answers — it's not a fundamentals course.</p></details>
+    <details><summary>Do I need to be fluent in English?</summary><p>You don't need to be fluent, but sessions are conducted in English, because that's the language of the real interview you'll face.</p></details>
+    <details><summary>How does payment work?</summary><p>A single payment of AUD 1,500. We'll confirm the details on the initial call.</p></details>
+    <details><summary>How is this different from the Career Mentoring program?</summary><p>Career Mentoring covers strategy, portfolio and LinkedIn over 6 weeks. Interview Ready is focused specifically on interview prep for Data Engineers, in English, over 8 sessions.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2025 Alessandro Falanque – Interview Ready · <a href="/au/" style="color:var(--accent)">Back to home</a><br><a href="mailto:afalanque@gmail.com">afalanque@gmail.com</a> · <a href="https://www.instagram.com/alessandro.falanque/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/alessandrofalanque/" target="_blank" rel="noopener">LinkedIn</a></div>
+</footer>
+
+<!-- WhatsApp floating button -->
+<a class="wa-float" href="https://wa.me/61433683814?text=Hi%20Alessandro%21%20I%20came%20from%20your%20site%20and%20I%27d%20like%20to%20know%20more%20about%20Interview%20Ready." target="_blank" rel="noopener" aria-label="Chat with me"><span>Chat with me</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.003 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.73 6.4L3.2 28.8l6.57-1.72a12.74 12.74 0 0 0 6.23 1.6h.01c7.06 0 12.8-5.74 12.8-12.8s-5.75-12.68-12.81-12.68zm0 23.3h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-3.9 1.02 1.04-3.8-.25-.39a10.56 10.56 0 0 1-1.62-5.62c0-5.86 4.77-10.62 10.63-10.62 2.84 0 5.5 1.11 7.51 3.12a10.55 10.55 0 0 1 3.11 7.51c0 5.86-4.77 10.62-10.62 10.62zm5.83-7.96c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.35-.26-.62-.52-.54-.71-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.29.16.21 2.24 3.42 5.43 4.79.76.33 1.35.53 1.81.68.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/></svg></a>
+</body>
+</html>
